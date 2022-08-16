@@ -1,82 +1,6 @@
 @extends('layout.default')
 @section('content')
 
-<!-- Navbar & Carousel Start -->
-<div class="container-fluid position-relative p-0">
-        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
-            <a href="index.html" class="navbar-brand p-0">
-                <h1 class="m-0"><i class="fa fa-user-tie me-2"></i>Startup</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Services</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blog</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="blog.html" class="dropdown-item">Blog Grid</a>
-                            <a href="detail.html" class="dropdown-item">Blog Detail</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu m-0">
-                            <a href="price.html" class="dropdown-item">Pricing Plan</a>
-                            <a href="feature.html" class="dropdown-item">Our features</a>
-                            <a href="team.html" class="dropdown-item">Team Members</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="quote.html" class="dropdown-item">Free Quote</a>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                </div>
-                <butaton type="button" class="btn text-primary ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
-                <a href="https://htmlcodex.com/startup-company-website-template" class="btn btn-primary py-2 px-4 ms-3">Download Pro Version</a>
-            </div>
-        </nav>
-
-        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="w-100" src="img/carousel-1.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>
-                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative & Innovative Digital Solution</h1>
-                            <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free Quote</a>
-                            <a href="" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img class="w-100" src="img/carousel-2.jpg" alt="Image">
-                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                        <div class="p-3" style="max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>
-                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative & Innovative Digital Solution</h1>
-                            <a href="quote.html" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Free Quote</a>
-                            <a href="" class="btn btn-outline-light py-md-3 px-md-5 animated slideInRight">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#header-carousel"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
-    <!-- Navbar & Carousel End -->
 
      <!-- Facts Start -->
      <div class="container-fluid facts py-5 pt-lg-0">
@@ -100,7 +24,7 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="text-primary mb-0">Projects Done</h5>
-                            <h1 class="mb-0" data-toggle="counter-up">12345</h1>
+                            <h1 class="mb-0" data-toggle="counter-up">1111</h1>
                         </div>
                     </div>
                 </div>
@@ -111,7 +35,7 @@
                         </div>
                         <div class="ps-4">
                             <h5 class="text-white mb-0">Win Awards</h5>
-                            <h1 class="text-white mb-0" data-toggle="counter-up">12345</h1>
+                            <h1 class="text-white mb-0" data-toggle="counter-up">{{ $umroh }}</h1>
                         </div>
                     </div>
                 </div>
@@ -119,6 +43,20 @@
         </div>
     </div>
     <!-- Facts Start -->
+    <div>
+        <?php                    
+            try {
+                if(DB::connection()->getPdo())
+                {
+                    echo "Successfully connected to the database => "
+                                  .DB::connection()->getDatabaseName();
+                }
+            }
+            catch (Exception $e) {
+                echo "Unable to connect";
+            }
+        ?>
+    </div>
 
 
     <!-- About Start -->
@@ -369,69 +307,6 @@
     </div>
     <!-- Pricing Plan End -->
 
-
-    <!-- Quote Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-7">
-                    <div class="section-title position-relative pb-3 mb-5">
-                        <h5 class="fw-bold text-primary text-uppercase">Request A Quote</h5>
-                        <h1 class="mb-0">Need A Free Quote? Please Feel Free to Contact Us</h1>
-                    </div>
-                    <div class="row gx-3">
-                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.2s">
-                            <h5 class="mb-4"><i class="fa fa-reply text-primary me-3"></i>Reply within 24 hours</h5>
-                        </div>
-                        <div class="col-sm-6 wow zoomIn" data-wow-delay="0.4s">
-                            <h5 class="mb-4"><i class="fa fa-phone-alt text-primary me-3"></i>24 hrs telephone support</h5>
-                        </div>
-                    </div>
-                    <p class="mb-4">Eirmod sed tempor lorem ut dolores. Aliquyam sit sadipscing kasd ipsum. Dolor ea et dolore et at sea ea at dolor, justo ipsum duo rebum sea invidunt voluptua. Eos vero eos vero ea et dolore eirmod et. Dolores diam duo invidunt lorem. Elitr ut dolores magna sit. Sea dolore sanctus sed et. Takimata takimata sanctus sed.</p>
-                    <div class="d-flex align-items-center mt-2 wow zoomIn" data-wow-delay="0.6s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
-                            <i class="fa fa-phone-alt text-white"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Call to ask any question</h5>
-                            <h4 class="text-primary mb-0">+012 345 6789</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-xl-12">
-                                    <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height: 55px;">
-                                </div>
-                                <div class="col-12">
-                                    <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height: 55px;">
-                                </div>
-                                <div class="col-12">
-                                    <select class="form-select bg-light border-0" style="height: 55px;">
-                                        <option selected>Select A Service</option>
-                                        <option value="1">Service 1</option>
-                                        <option value="2">Service 2</option>
-                                        <option value="3">Service 3</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control bg-light border-0" rows="3" placeholder="Message"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-dark w-100 py-3" type="submit">Request A Quote</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Quote End -->
-
-
     <!-- Testimonial Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -557,5 +432,6 @@
         </div>
     </div>
     <!-- Blog Start -->
+
 
 @stop
