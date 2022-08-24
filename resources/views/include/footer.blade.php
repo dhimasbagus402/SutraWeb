@@ -32,11 +32,11 @@
                                 <h3 class="text-light mb-0">Quick Links</h3>
                             </div>
                             <div class="link-animated d-flex flex-column justify-content-start">
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-                                <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                                <a class="text-light mb-2" href="/"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
+                                <a class="text-light mb-2" href="/about"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
+                                <a class="text-light mb-2" href="/services"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
                                 <a class="text-light mb-2" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Latest Blog</a>
-                                <a class="text-light" href="#"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
+                                <a class="text-light" href="/contact"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
                             </div>
                         </div>
                     </div>
@@ -44,12 +44,12 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid text-white" style="background: #061429;">
+    <div class="container-fluid text-white" style="background: #0E0A11;">
         <div class="container text-center">
             <div class="row justify-content-end">
                 <div class="col-lg-8 col-md-6">
-                    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">Your Site Name</a>. All Rights Reserved. 
+                    <div style="font-size : 14px" class="d-flex align-items-center justify-content-center" style="height: 75px;">
+                        <p class="mb-0">&copy; <a class="text-white border-bottom" href="#">SUTRA Tour & Travel</a>. All Rights Reserved. 
 						
 						<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
 						Designed by <a class="text-white border-bottom" href="https://htmlcodex.com">HTML Codex</a></p>
@@ -74,6 +74,7 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    
 
     <!-- Template Javascript -->
     <script type="text/javascript" src="js/main.js"></script>

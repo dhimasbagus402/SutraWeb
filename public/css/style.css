@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #06A3DA;
+    --primary: #DAA520;
     --secondary: #34AD54;
     --light: #EEF9FF;
     --dark: #091E3E;
@@ -489,4 +489,14 @@ h6,
     .footer-about {
         margin-bottom: -75px;
     }
+}
+
+.logo1{
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.banerr{
+    width: 50%;
 }

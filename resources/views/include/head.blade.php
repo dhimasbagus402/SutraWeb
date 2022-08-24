@@ -1,12 +1,12 @@
 <head>
     <meta charset="utf-8">
-    <title>Startup - Startup Website Template</title>
+    <title>PT. SUTRA</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link rel="icon" href="<?php echo asset('img/favicon.ico') ?>">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,12 +18,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo asset('lib/owlcarousel/assets/owl.carousel.min.css') ?>">
+    <link rel="stylesheet" href="<?php echo asset('lib/animate/animate.min.css') ?>">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo asset('css/bootstrap.min.css') ?>">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="<?php echo asset('css/style.css') ?>">
