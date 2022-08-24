@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JamaahController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,6 +39,33 @@ Route::get('/tambahblog', function () {
     return view('blogs.tambahblog');
 });
 
+//AUTH
+Auth::routes();
+
+Route::middleware(['auth', 'user-access:user'])->group(function () {
+  
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+});
+  
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:admin'])->group(function () {
+  
+    Route::get('/admin/home', [HomeController::class, 'adminHome'])->name('admin.home');
+});
+  
+/*------------------------------------------
+--------------------------------------------
+All Admin Routes List
+--------------------------------------------
+--------------------------------------------*/
+Route::middleware(['auth', 'user-access:manager'])->group(function () {
+  
+    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+});
 
 Route::resource('blogs', BlogController::class);
 Route::resource('adminpanel', BlogController::class);
@@ -50,11 +78,3 @@ Route::get('/dashboard', 'App\Http\Controllers\BlogController@index');
 //Main View
 Route::get('/', 'App\Http\Controllers\JamaahController@utama');
 Route::get('/blog', 'App\Http\Controllers\BlogController@index');
-
-//User Auth
-Route::get('/login', 'App\Http\Controllers\AuthController@index');
-Route::post('/post-login', 'App\Http\Controllers\AuthController@postLogin'); 
-Route::get('/registration', 'App\Http\Controllers\AuthController@registration');
-Route::post('/post-registration', 'App\Http\Controllers\AuthController@postRegistration'); 
-Route::get('/logindashboard', 'App\Http\Controllers\AuthController@logindashboard'); 
-Route::get('/logout', 'App\Http\Controllers\AuthController@logout');
