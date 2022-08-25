@@ -13,7 +13,7 @@ class JamaahController extends Controller
     {
         $umroh = DB::table('jamaahs')->where('nama', 'umroh')->first();
         $hajj = DB::table('jamaahs')->where('nama', 'hajj')->first();
-        return view('pages.home',['umroh'=>$umroh],['hajj'=>$hajj]);
+        return view('home',['umroh'=>$umroh],['hajj'=>$hajj]);
     }
 
     public function index()

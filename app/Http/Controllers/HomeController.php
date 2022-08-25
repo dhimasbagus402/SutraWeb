@@ -21,9 +21,31 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    
+    //Main View
+     public function index()
     {
-        return view('auth.home');
+        return view('home');
+    }
+
+    public function about()
+    {
+        return view('pages.about');
+    } 
+
+    public function contact()
+    {
+        return view('pages.contact');
+    } 
+
+    public function services()
+    {
+        return view('pages.services');
+    } 
+
+    public function blog()
+    {
+        return view('pages.blog');
     } 
   
     /**
@@ -33,7 +55,7 @@ class HomeController extends Controller
      */
     public function adminHome()
     {
-        return view('auth.adminHome');
+        return view('adminpanel.admin');
     }
   
     /**

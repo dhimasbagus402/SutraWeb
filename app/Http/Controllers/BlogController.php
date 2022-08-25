@@ -17,6 +17,14 @@ class BlogController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
+    public function index2()
+    {
+    	// mengambil data dari table
+    	$blogs = Blog::latest()->paginate(5);
+
+        return view('pages.blog', compact('blogs'));
+    }
+
     public function tambah()
     {
 	    // memanggil view tambah

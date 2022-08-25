@@ -21,8 +21,8 @@
                                 @endif
                             <div class="card-body">
                             <div class="pull-right">
-                                <a class="btn btn-success" href="/tambahblog"> 
-                                    Add New Blog
+                                <a class="btn btn-success" href="/tambahblog" style="margin-bottom: 20px;"> 
+                                    Tambah Blog Baru
                                 </a>
                             </div>
                                 <table id="datatablesSimple"> 

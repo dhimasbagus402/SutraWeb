@@ -1,6 +1,7 @@
 @extends('layouts.default2')
 @section('content2')
 
+<div style="margin-top: 100px;">
 	<h3>Edit Data</h3>
  
 	<a href="/jamaah"> Kembali</a>
@@ -24,4 +25,6 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>
+</div>
+
 @stop

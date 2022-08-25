@@ -31,8 +31,6 @@
                 <td>
 
                         <a href="{{ route('jamaahs.edit', $ja->id) }}">Edit</a>
-                        |
-				        <a href="">Hapus</a>
 
                 </td>
             </tr>

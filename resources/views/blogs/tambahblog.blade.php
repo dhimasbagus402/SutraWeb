@@ -8,7 +8,7 @@
                 <h4>Add New Blog</h4>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('blogs.index') }}"> Back</a>
+                <a class="btn btn-primary" href="/dashboard"> Back</a>
             </div>
         </div>
     </div>
