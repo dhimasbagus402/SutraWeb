@@ -20,9 +20,9 @@ class BlogController extends Controller
     public function index2()
     {
     	// mengambil data dari table
-    	$blogs = Blog::latest()->paginate(5);
+    	$blogs = Blog::latest()->paginate(6);
 
-        return view('pages.blog', compact('blogs'));
+        return view('pages.blog',['blogs' => $blogs]);
     }
 
     public function tambah()

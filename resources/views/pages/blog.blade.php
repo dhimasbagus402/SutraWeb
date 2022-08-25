@@ -21,9 +21,7 @@
         <div class="container py-5">
             <div class="row g-5">
                 <!-- Blog list Start -->
-                @foreach ($blogs as $blog
-                <div class="col-lg-8">
-                    <div class="row g-5">
+                @foreach ($blogs as $blog)
                         <div class="col-md-6 wow slideInUp" data-wow-delay="0.1s">
                             <div class="blog-item bg-light rounded overflow-hidden">
                                 <div class="blog-img position-relative overflow-hidden">
@@ -31,19 +29,18 @@
                                 </div>
                                 <div class="p-4">
                                     <div class="d-flex mb-3">
-                                        <small class="me-3"><i class="far fa-user text-primary me-2"></i>{{ $blog->nama }}</small>
                                         <small><i class="far fa-calendar-alt text-primary me-2"></i>{{ $blog->tanggal }}</small>
                                     </div>
-                                    <h4 class="mb-3">{{ }}</h4>
+                                    <h4 class="mb-3">{{ $blog->nama }}</h4>
                                     <p>{{ $blog->deskripsi }}</p>
                                     <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
                 @endforeach
-                <!-- Blog list End -->
-                {{ $blogs->links() }}
+                {!! $blogs->links('pages.paginator') !!}
+            </div>
+        </div>
+    </div>
 
 @stop
