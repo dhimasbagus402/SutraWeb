@@ -33,7 +33,7 @@
                                     </div>
                                     <h4 class="mb-3">{{ $blog->nama }}</h4>
                                     <p>{{ $blog->deskripsi }}</p>
-                                    <a class="text-uppercase" href="">Read More <i class="bi bi-arrow-right"></i></a>
+                                    <a class="text-uppercase" href="{{ route('blogs.show', $blog->id) }}">Read More <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>

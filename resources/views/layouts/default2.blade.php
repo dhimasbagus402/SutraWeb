@@ -5,7 +5,7 @@
    @include('adminpanel.head2')
 </head>
 
-<body class="sb-nav-fixed">
+<body>
 
     <div id="layoutSidenav_content">
        @include('adminpanel.header2')

@@ -1,13 +1,13 @@
 @extends('layouts.default2')
 @section('content2')
 
-
-<div class="row" style="margin-top: 30px;">
+<div class="form1">
+    <div class="row" style="margin-top: 30px;">
         <div class="col-lg-12 margin-tb">
             <div style="text-align: center;">
                 <h4>Add New Blog</h4>
             </div>
-            <div class="pull-right">
+            <div class="pull-right" style="margin-top: 50px">
                 <a class="btn btn-primary" href="/dashboard"> Back</a>
             </div>
         </div>
@@ -58,6 +58,6 @@
         </div>
 
     </form>
-
+</div>
 
 @stop

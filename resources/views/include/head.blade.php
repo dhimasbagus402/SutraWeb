@@ -18,11 +18,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link rel="stylesheet" href="<?php echo asset('lib/owlcarousel/assets/owl.carousel.min.css') ?>">
-    <link rel="stylesheet" href="<?php echo asset('lib/animate/animate.min.css') ?>">
+    <link rel="stylesheet" href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('lib/animate/animate.min.css') }}">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="<?php echo asset('css/bootstrap.min.css') ?>">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
 
     <!-- Template Stylesheet -->
-    <link rel="stylesheet" href="<?php echo asset('css/style.css') ?>">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">

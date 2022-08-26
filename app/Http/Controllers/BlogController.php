@@ -11,7 +11,7 @@ class BlogController extends Controller
     public function index()
     {
     	// mengambil data dari table
-    	$blogs = Blog::latest()->paginate(5);
+    	$blogs = Blog::latest()->paginate(26);
 
         return view('adminpanel.admin', compact('blogs'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -20,9 +20,14 @@ class BlogController extends Controller
     public function index2()
     {
     	// mengambil data dari table
-    	$blogs = Blog::latest()->paginate(6);
+    	$blogs = Blog::latest()->paginate(9);
 
         return view('pages.blog',['blogs' => $blogs]);
+    }
+
+    public function show(Blog $blog)
+    {
+        return view('pages.blogdetail', compact('blog'));
     }
 
     public function tambah()
@@ -56,11 +61,6 @@ class BlogController extends Controller
         return redirect()->route('blogs.index')
             ->with('success', 'Blog created successfully.');
 
-    }
-
-	public function show(Blog $blog)
-    {
-        return view('blogs.show', compact('blog'));
     }
 
 	public function edit(Blog $blog)

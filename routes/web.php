@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JamaahController;
+use App\Http\Controllers\JamaahShowController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\Auth\HomeController;
+use App\Http\Controllers\BlogShowController;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,8 +33,9 @@ Route::get('/blog', function () {
 });
 
 
+
 //Main View
-Route::get('/', 'App\Http\Controllers\JamaahController@utama');
+Route::get('/', 'App\Http\Controllers\JamaahShowController@utama');
 Route::get('/blog', 'App\Http\Controllers\BlogController@index2');
 
 //AUTH
@@ -42,7 +45,7 @@ Auth::routes();
 Route::middleware(['auth', 'user-access:user'])->group(function () {
   
     Route::get('/home', 'App\Http\Controllers\Auth\LoginController@index');
-    Route::get('/home', 'App\Http\Controllers\JamaahController@utama');
+    Route::get('/home', 'App\Http\Controllers\JamaahShowController@utama');
 });
   
 /*------------------------------------------
@@ -54,10 +57,13 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
   //Admin Dashboard
     Route::get('/dashboard','App\Http\Controllers\Auth\LoginController@adminHome');
     Route::get('/dashboard', 'App\Http\Controllers\BlogController@index');
-    Route::get('/tambahblog', 'App\Http\Controllers\BlogController@tambah');
-    Route::get('/jamaah','App\Http\Controllers\JamaahController@index');
-    Route::get('/jamaahs/{id}/edit','App\Http\Controllers\JamaahController@index');
+
     Route::resource('blogs', BlogController::class);
+    Route::get('/tambahblog', 'App\Http\Controllers\BlogController@tambah');
+
+    Route::get('/jamaah','App\Http\Controllers\JamaahController@index');
+    Route::get('/jamaahs/{jamaah}/edit','App\Http\Controllers\JamaahController@index');
+    Route::resource('jamaahs', JamaahController::class);
 });
   
 /*------------------------------------------
@@ -71,4 +77,6 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
 });
 
 Route::resource('adminpanel', BlogController::class);
-Route::resource('jamaahs', JamaahController::class);
+Route::resource('blogs', BlogController::class)->only([
+    'show'
+]);

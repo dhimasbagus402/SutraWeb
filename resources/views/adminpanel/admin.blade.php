@@ -3,7 +3,7 @@
 
         
                 <main>
-                    <div class="container-fluid px-4" style="margin-top: 100px;">
+                    <div class="container-fluid px-4" style="margin-top: 30px;">
                         <h1 class="mt-4">Dashboard</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Dashboard</li>
@@ -44,7 +44,7 @@
                                             <td>
                                                 <form action="{{ route('blogs.destroy', $blog->id) }}" method="POST">
 
-                                                    <a class="btn btn-info" href="{{ route('blogs.show', $blog->id) }}">Show</a>
+                                                    <a class="btn btn-info" target="_blank" href="{{ route('blogs.show', $blog->id) }}">Show</a>
 
                                                     <a class="btn btn-primary" href="{{ route('blogs.edit', $blog->id) }}">Edit</a>
 

@@ -9,12 +9,6 @@ use Illuminate\Support\Facades\View;
 
 class JamaahController extends Controller
 {
-    public function utama()
-    {
-        $umroh = DB::table('jamaahs')->where('nama', 'umroh')->first();
-        $hajj = DB::table('jamaahs')->where('nama', 'hajj')->first();
-        return view('home',['umroh'=>$umroh],['hajj'=>$hajj]);
-    }
 
     public function index()
     {
