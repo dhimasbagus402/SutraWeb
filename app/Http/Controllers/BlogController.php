@@ -104,4 +104,16 @@ class BlogController extends Controller
         return redirect()->route('blogs.index')
             ->with('success', 'Blog deleted successfully');
     }
+
+    public function hpusimg(Request $request, Blog $blog)
+    {
+        $blog = Blog::find($request->id);
+
+        unlink("imgblog/".$blog->gambar);
+
+        Blog::where("id", $blog->id)->delete();
+
+        return redirect()->route('blogs.index')
+            ->with('success', 'Blog deleted successfully');
+    }
 }
