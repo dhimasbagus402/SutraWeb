@@ -49,7 +49,12 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Gambar:</strong>
-                    <input type="file" name="gambar" class="form-control" placeholder="gambar">
+                    <input 
+                    type="file" 
+                    name="gambar[]" 
+                    id="inputImage"
+                    multiple 
+                    class="form-control @error('gambar') is-invalid @enderror">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 20px;">

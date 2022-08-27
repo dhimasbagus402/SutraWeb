@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JamaahController;
 use App\Http\Controllers\JamaahShowController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\BlogShowController;
 use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +14,14 @@ use App\Http\Controllers\HomeController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 */
+
+use App\Http\Controllers\UploadImagesController;
+ 
+Route::get('/upload-multiple-image-preview', [UploadImagesController::class, 'index']);
+ 
+Route::post('/upload-multiple-image-preview', [UploadImagesController::class, 'store']);
+
+
 
 Route::get('/about', function () {
     return view('pages.about');

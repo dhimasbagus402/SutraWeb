@@ -16,6 +16,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <a class="navbarlink" href="/jamaah">Jamaah</a>
+                        <a class="navbarlink" href="/dashboard">Blog</a>
                         <a class="navbarlink" href="/" target="_blank">Home</a>
                     </div>
                 </li>
