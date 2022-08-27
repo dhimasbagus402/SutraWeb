@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
 
 class BlogController extends Controller
@@ -97,23 +98,16 @@ class BlogController extends Controller
 
 
     // method untuk hapus data
-	public function destroy(Blog $blog)
+	public function destroy($id)
     {
+        $blog = Blog::findOrFail($id);
+        $image_path = public_path('imgblog').'/'.$blog->gambar;
+        unlink($image_path);
         $blog->delete();
 
-        return redirect()->route('blogs.index')
-            ->with('success', 'Blog deleted successfully');
-    }
-
-    public function hpusimg(Request $request, Blog $blog)
-    {
-        $blog = Blog::find($request->id);
-
-        unlink("imgblog/".$blog->gambar);
-
-        Blog::where("id", $blog->id)->delete();
 
         return redirect()->route('blogs.index')
             ->with('success', 'Blog deleted successfully');
     }
+
 }
