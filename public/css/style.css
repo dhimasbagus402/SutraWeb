@@ -500,3 +500,9 @@ h6,
 .banerr{
     width: 50%;
 }
+
+.map{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}

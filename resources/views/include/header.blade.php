@@ -19,7 +19,7 @@
                     <a href="/blog" class="nav-item nav-link">Blog</a>
                     <a href="/contact" class="nav-item nav-link">Contact</a>
                 </div>
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
