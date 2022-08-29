@@ -3,88 +3,69 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Blog;
+use App\Models\Images;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
 
-class BlogController extends Controller
+class ViewController extends Controller
 {
     public function index()
     {
     	// mengambil data dari table
-    	$blogs = Blog::latest()->paginate(26);
+    	$images = Images::latest()->paginate(26);
 
-        return view('adminpanel.admin', compact('blogs'))
+        return view('images.views', compact('images'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
-    }
-
-    public function index2()
-    {
-    	// mengambil data dari table
-    	$blogs = Blog::latest()->paginate(9);
-        $banerblog = DB::table('images')->where('nama', 'Baner_Blog')->first();
-
-        return view('pages.blog',compact('blogs','banerblog'));
-    }
-
-    public function show(Blog $blog)
-    {
-        $banerblog = DB::table('images')->where('nama', 'Baner_Blog')->first();
-        return view('pages.blogdetail', compact('blog','banerblog'));
     }
 
     public function tambah()
     {
 	    // memanggil view tambah
-	    return view('blogs.tambahblog');
+	    return view('images.tambah');
  
     }
 
     // method untuk insert data ke table
     public function store(Request $request)
     {
-		$request->validate([
+		$request->validate([         
             'nama' => 'required',
-            'deskripsi' => 'required',
 			'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-			'tanggal' => 'required',
         ]);
 
         $input = $request->all();
 
         if ($gambar = $request->file('gambar')) {
-            $destinationPath = 'imgblog/';
+            $destinationPath = 'view/';
             $profileImage = date('YmdHis') . "." . $gambar->getClientOriginalExtension();
             $gambar->move($destinationPath, $profileImage);
             $input['gambar'] = "$profileImage";
         }
 
-        Blog::create($input);
+        Images::create($input);
 
-        return redirect()->route('blogs.index')
+        return redirect()->route('images.index')
             ->with('success', 'Blog created successfully.');
 
     }
 
-	public function edit(Blog $blog)
+	public function edit(Images $image)
     {
-        return view('blogs.editblog', compact('blog'));
+        return view('images.edit', compact('image'));
     }
 
 
     // update data
-	public function update(Request $request, Blog $blog)
-    {
+	public function update(Request $request, Images $image)
+    {   
         $request->validate([
             'nama' => 'required',
-            'deskripsi' => 'required',
-			'tanggal' => 'required'
         ]);
 
         $input = $request->all();
 
         if ($gambar = $request->file('gambar')) {
-            $destinationPath = 'imgblog/';
+            $destinationPath = 'view/';
             $profileImage = date('YmdHis') . "." . $gambar->getClientOriginalExtension();
             $gambar->move($destinationPath, $profileImage);
             $input['gambar'] = "$profileImage";
@@ -92,9 +73,9 @@ class BlogController extends Controller
             unset($input['gambar']);
         }
 
-        $blog->update($input);
+        $image->update($input);
 
-        return redirect()->route('blogs.index')
+        return redirect()->route('images.index')
             ->with('success', 'Blog updated successfully');
     }
 
@@ -102,13 +83,13 @@ class BlogController extends Controller
     // method untuk hapus data
 	public function destroy($id)
     {
-        $blog = Blog::findOrFail($id);
-        $image_path = public_path('imgblog').'/'.$blog->gambar;
+        $image = Images::findOrFail($id);
+        $image_path = public_path('view').'/'.$image->gambar;
         unlink($image_path);
-        $blog->delete();
+        $image->delete();
 
 
-        return redirect()->route('blogs.index')
+        return redirect()->route('images.index')
             ->with('success', 'Blog deleted successfully');
     }
 

@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JamaahController;
-use App\Http\Controllers\JamaahShowController;
+use App\Http\Controllers\MainViewController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ViewController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,7 +43,10 @@ Route::get('/blog', function () {
 
 
 //Main View
-Route::get('/', 'App\Http\Controllers\JamaahShowController@utama');
+Route::get('/', 'App\Http\Controllers\MainViewController@utama');
+Route::get('/about', 'App\Http\Controllers\MainViewController@banerabout');
+Route::get('/contact', 'App\Http\Controllers\MainViewController@banercontact');
+Route::get('/services', 'App\Http\Controllers\MainViewController@banerservices');
 Route::get('/blog', 'App\Http\Controllers\BlogController@index2');
 
 //AUTH
@@ -52,7 +56,7 @@ Auth::routes();
 Route::middleware(['auth', 'user-access:user'])->group(function () {
   
     Route::get('/home', 'App\Http\Controllers\Auth\LoginController@index');
-    Route::get('/home', 'App\Http\Controllers\JamaahShowController@utama');
+    Route::get('/home', 'App\Http\Controllers\MainViewController@utama');
 });
   
 /*------------------------------------------
@@ -67,6 +71,10 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::resource('blogs', BlogController::class);
     Route::get('/tambahblog', 'App\Http\Controllers\BlogController@tambah');
+
+    Route::resource('images', ViewController::class);
+    Route::get('/views', 'App\Http\Controllers\ViewController@index');
+    Route::get('/tambah', 'App\Http\Controllers\ViewController@tambah');
 
     Route::get('/jamaah','App\Http\Controllers\JamaahController@index');
     Route::get('/jamaahs/{jamaah}/edit','App\Http\Controllers\JamaahController@index');
