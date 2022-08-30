@@ -3,12 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 use App\Models\Blog;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
 
 class BlogController extends Controller
 {
+    public function __construct()
+    {
+       $this->middleware('auth');
+    }
+
     public function index()
     {
     	// mengambil data dari table
@@ -61,8 +67,7 @@ class BlogController extends Controller
 
         Blog::create($input);
 
-        return redirect()->route('blogs.index')
-            ->with('success', 'Blog created successfully.');
+        return response()->json(['success'=>'Added new blog.']);
 
     }
 
@@ -111,5 +116,6 @@ class BlogController extends Controller
         return redirect()->route('blogs.index')
             ->with('success', 'Blog deleted successfully');
     }
+    
 
 }

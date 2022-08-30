@@ -34,7 +34,7 @@
                                             <td>{{ $ja->jumlah }}</td>
                                             <td>
 
-                                                    <a href="{{ route('jamaahs.edit', $ja->id) }}">Edit</a>
+                                                    <a class="btn btn-primary" href="{{ route('jamaahs.edit', $ja->id) }}">Edit</a>
 
                                             </td>
                                         </tr>

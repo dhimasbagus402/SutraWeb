@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JamaahController;
 use App\Http\Controllers\MainViewController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\BlogShowController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ViewController;
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,7 +49,11 @@ Route::get('/', 'App\Http\Controllers\MainViewController@utama');
 Route::get('/about', 'App\Http\Controllers\MainViewController@banerabout');
 Route::get('/contact', 'App\Http\Controllers\MainViewController@banercontact');
 Route::get('/services', 'App\Http\Controllers\MainViewController@banerservices');
-Route::get('/blog', 'App\Http\Controllers\BlogController@index2');
+Route::get('/blog', 'App\Http\Controllers\BlogShowController@index2');
+
+Route::post('/comment/store', 'App\Http\Controllers\CommentController@store')->name('comments.store');
+Route::post('/reply/store', 'App\Http\Controllers\CommentController@replyStore')->name('reply.add');
+
 
 //AUTH
 Auth::routes();
@@ -79,6 +85,8 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::get('/jamaah','App\Http\Controllers\JamaahController@index');
     Route::get('/jamaahs/{jamaah}/edit','App\Http\Controllers\JamaahController@index');
     Route::resource('jamaahs', JamaahController::class);
+
+    Route::resource('adminpanel', BlogController::class);
 });
   
 /*------------------------------------------
@@ -91,7 +99,6 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
 });
 
-Route::resource('adminpanel', BlogController::class);
 Route::resource('blogs', BlogController::class)->only([
     'show'
 ]);

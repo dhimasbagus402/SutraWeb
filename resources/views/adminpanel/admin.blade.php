@@ -21,9 +21,10 @@
                                 @endif
                             <div class="card-body">
                             <div class="pull-right">
-                                <a class="btn btn-success" href="/tambahblog" style="margin-bottom: 20px;"> 
-                                    Tambah Blog Baru
-                                </a>
+                            <button type="button" class="btn btn-success float-end" data-bs-toggle="modal" data-bs-target="#postModal">
+                                Create Post
+                            </button> 
+                            @include('blogs.tambahblog')
                             </div>
                                 <table id="datatablesSimple"> 
                                     <tr>

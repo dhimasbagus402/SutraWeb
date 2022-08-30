@@ -8,7 +8,7 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                DataTable Example
+                                !! Jangan Mengubah Nama !!
                             </div>
                             <br>
                                 @if ($message = Session::get('success'))
@@ -17,6 +17,7 @@
                                     </div>
                                 @endif
                             <div class="card-body">
+                            
                                 <table id="datatablesSimple"> 
                                     <tr>
                                         <th>No</th>

@@ -59,4 +59,10 @@ class User extends Authenticatable
             get: fn ($value) =>  ["user", "admin", "manager"][$value],
         );
     }
+
+    public function posts() {
+  
+        return $this->hasMany(Post::class);
+     
+    }
 }

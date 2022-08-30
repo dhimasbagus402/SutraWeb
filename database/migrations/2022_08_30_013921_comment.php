@@ -13,10 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('jamaahs', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string('nama', 50);
-            $table->integer('Jumlah');
+            $table->integer('user_id')->unsigned();
+            $table->integer('parent_id')->unsigned()->nullable();
+            $table->string('comment', 155);
+            $table->integer('commentable_id')->unsigned();
+            $table->string('commentable_type');
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jamaahs');
+        Schema::dropIfExists('comments');
     }
 };
