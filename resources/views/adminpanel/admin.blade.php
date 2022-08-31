@@ -24,11 +24,10 @@
                             @endif
                             <div class="card-body">
                                 <div class="pull-right">
-                                    <button type="button" class="btn btn-success float-end" data-bs-toggle="modal" data-bs-target="#postModal">
-                                        Create Post
-                                    </button> 
+                                    <a class="btn btn-success float-end" href="/tambahblog">
+                                        Create Blog
+                                    </a> 
                                 </div>
-                                @include('blogs.tambahblog')
 
                                 <table id="datatablesSimple"> 
                                     <tr>

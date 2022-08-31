@@ -48,13 +48,12 @@ class BlogController extends Controller
     }
 
     // method untuk insert data ke table
-    public function store(Request $request)
+    public function rrrrrrr(Request $request)
     {
         $validator = Validator::make($request->all(),[
             'nama' => 'required',
             'deskripsi' => 'required',
 			'tanggal' => 'required',
-            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         if ($gambar = $request->file('gambar')) {
@@ -75,19 +74,14 @@ class BlogController extends Controller
     }
 
 
-    public function rrrrrr(Request $request)
+    public function store(Request $request)
     {
-        $validator = Validator::make($request->all(),[
-            'nama' => 'required',
-            'deskripsi' => 'required',
-			'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-			'tanggal' => 'required',
-        ]);
+
         $request->validate([
             'nama' => 'required',
             'deskripsi' => 'required',
-			'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
 			'tanggal' => 'required',
+			'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $input = $request->all();
@@ -101,7 +95,8 @@ class BlogController extends Controller
 
         Blog::create($input);
 
-        return back()->with('success', 'Student created successfully.');
+        return redirect()->route('blogs.index')
+            ->with('success', 'Data updated successfully');
 
     }
 

@@ -23,7 +23,7 @@
    
            $blog->comments()->save($comment);
    
-           return back();
+           return response()->json(['success'=>'Your comment is submitted!']);
        }
    
        public function replyStore(Request $request)
@@ -43,7 +43,7 @@
    
            $blog->comments()->save($reply);
    
-           return back();
+           return response()->json(['success'=>'Your comment is submitted!']);
    
        }
    }
