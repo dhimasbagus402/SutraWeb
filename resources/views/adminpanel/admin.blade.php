@@ -14,17 +14,22 @@
                                 DataTable Example
                             </div>
                             <br>
-                                @if ($message = Session::get('success'))
-                                    <div class="alert alert-success">
-                                        <p>{{ $message }}</p>
-                                    </div>
-                                @endif
+                            @if(Session::has('success'))
+                                <div class="alert alert-success">
+                                    {{ Session::get('success') }}
+                                    @php
+                                        Session::forget('success');
+                                    @endphp
+                                </div>
+                            @endif
                             <div class="card-body">
-                            <div class="pull-right">
-                            <button type="button" class="btn btn-success float-end" data-bs-toggle="modal" data-bs-target="#postModal">
-                                Create Post
-                            </button> 
-                            </div>
+                                <div class="pull-right">
+                                    <button type="button" class="btn btn-success float-end" data-bs-toggle="modal" data-bs-target="#postModal">
+                                        Create Post
+                                    </button> 
+                                </div>
+                                @include('blogs.tambahblog')
+
                                 <table id="datatablesSimple"> 
                                     <tr>
                                         <th>No</th>
@@ -57,65 +62,14 @@
                                         </tr>
                                     @endforeach
                                 </table>
+
                                 <div class="d-flex justify-content-center">
                                 {!! $blogs->links('pages.paginator') !!}
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="postModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Create Blog</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form name="contactUsForm" id="contactUsForm" method="post" action="javascript:void(0)">
-                                @csrf
-                        
-                                    <div class="alert alert-danger print-error-msg" style="display:none">
-                                        <ul></ul>
-                                    </div>
-                            
-                                    <div class="mb-3">
-                                        <label for="namaID" class="form-label">Title:</label>
-                                        <input type="text" id="namaID" name="nama" class="form-control" placeholder="Title" required="">
-                                    </div>
-                        
-                                    <div class="mb-3">
-                                        <label for="deskripsiID" class="form-label">Deskripsi:</label>
-                                        <textarea name="deskripsi" class="form-control" id="deskripsiID"></textarea>
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="tanggalID" class="form-label">Tanggal:</label>
-                                            <input type="date" name="tanggal" id="tanggalID" class="form-control">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <label for="gambarID" class="form-label">Gambar:</label>
-                                            <input 
-                                            type="file" 
-                                            name="gambar" 
-                                            id="gambarID"
-                                            multiple 
-                                            class="form-control @error('gambar') is-invalid @enderror">
-                                    </div>
-
-                                    <div class="mb-3 text-center">
-                                        <button class="btn btn-success btn-submit">Submit</button>
-                                    </div>
-                            
-                                </form>
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                        </div>
-
                 </main>
        
 

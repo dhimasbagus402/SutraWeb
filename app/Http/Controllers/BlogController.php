@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Blog;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
+use Validator;
 
 class BlogController extends Controller
 {
@@ -49,7 +50,40 @@ class BlogController extends Controller
     // method untuk insert data ke table
     public function store(Request $request)
     {
-		$request->validate([
+        $validator = Validator::make($request->all(),[
+            'nama' => 'required',
+            'deskripsi' => 'required',
+			'tanggal' => 'required',
+            'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        if ($gambar = $request->file('gambar')) {
+            $destinationPath = 'imgblog/';
+            $profileImage = date('YmdHis') . "." . $gambar->getClientOriginalExtension();
+            $gambar->move($destinationPath, $profileImage);
+            $input['gambar'] = "$profileImage";
+        }
+        elseif (!$validator->passes()) {
+            return response()->json(['error'=>$validator->errors()->all()]);
+        }
+
+        $input = $request->all();
+        Blog::create($input);    
+
+        return response()->json(['success'=>'Blog created successfully.']);
+
+    }
+
+
+    public function rrrrrr(Request $request)
+    {
+        $validator = Validator::make($request->all(),[
+            'nama' => 'required',
+            'deskripsi' => 'required',
+			'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+			'tanggal' => 'required',
+        ]);
+        $request->validate([
             'nama' => 'required',
             'deskripsi' => 'required',
 			'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -67,9 +101,11 @@ class BlogController extends Controller
 
         Blog::create($input);
 
-        return response()->json(['success'=>'Added new blog.']);
+        return back()->with('success', 'Student created successfully.');
 
     }
+
+
 
 	public function edit(Blog $blog)
     {
