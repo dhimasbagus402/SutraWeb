@@ -105,6 +105,6 @@ Route::resource('blogs', BlogController::class)->only([
 ]);
 
 Route::get('blog-list', [TesController::class, 'index']);
-Route::get('blog-list/{id}/edit', [TesController::class, 'edit']);
-Route::post('blog-list/store', [TesController::class, 'store']);
-Route::get('blog-list/delete/{id}', [TesController::class, 'destroy']);
+Route::post('edit-blog', [TesController::class, 'edit']);
+Route::post('add-blog', [TesController::class, 'store']);
+Route::post('delete-blog', [TesController::class, 'destroy']);

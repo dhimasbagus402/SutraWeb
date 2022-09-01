@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Redirect,Response,DB;
 use File;
 use PDF;
+use Datatables;
 
 class TesController extends Controller
 {
@@ -14,8 +15,9 @@ class TesController extends Controller
     {
         if(request()->ajax()) {
             return datatables()->of(Blog::select('*'))
-            ->addColumn('action', 'blog-button')
-            ->addColumn('gambar', 'gambar')
+            ->addIndexColumn()
+            ->addColumn('action', 'action-button')
+            ->addColumn('gambar', 'show-image')
             ->rawColumns(['action','gambar'])
             ->addIndexColumn()
             ->make(true);
@@ -50,7 +52,7 @@ class TesController extends Controller
         return Response()->json($blog);
     } 
 
-    public function stor22e(Request $request)
+    public function storrre(Request $request)
     {  
         $blogId = $request->id;
         if($blogId){
@@ -60,11 +62,11 @@ class TesController extends Controller
                 $path = $request->file('gambar')->store('imgblog');
                 $blog->gambar = $path;
             }   
-            }else{
-                $path = $request->file('gambar')->store('imgblog');
-                $blog = new Blog;
-                $blog->gambar = $path;
-            }
+        }else{
+            $path = $request->file('gambar')->store('imgblog');
+            $blog = new Blog;
+            $blog->gambar = $path;
+        }
          
         $blog->nama = $request->nama;
         $blog->deskripsi = $request->deskripsi;

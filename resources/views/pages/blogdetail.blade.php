@@ -62,8 +62,7 @@
                             <h3 class="mb-0">Leave A Comment</h3>
                         </div>
                         
-                        <form id="contactForm">
-                            {{ csrf_field() }}
+                        <form id="contactForm" action="javascript:void(0)">
                             <div class="row g-3">
                                 <div class="col-12">
                                     <textarea class="form-control bg-white border-0" rows="5" name="comment" id="comment" placeholder="Comment"></textarea>
@@ -84,16 +83,14 @@
     </div>
     <!-- Blog End -->
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
         $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        
         $('#contactForm').on('submit',function(e){
             e.preventDefault();
 
@@ -104,13 +101,12 @@
             type:'POST',
             data:{
                 "_token": "{{ csrf_token() }}",
-                comment:comment
+                comment:comment,
             },
             success:function(response){
-                console.log(response);
                 if (response) {
-                $('#success-message').text(response.success); 
-                $("#contactForm")[0].reset(); 
+                    $('#success-message').text(response.success); 
+                    $("#contactForm")[0].reset(); 
                 }
             },
             error: function(response) {
