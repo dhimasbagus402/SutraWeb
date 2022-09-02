@@ -33,33 +33,35 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Gambar</th>
-                                        <th>Nama</th>
-                                        <th>Deskripsi</th>
-                                        <th>Tanggal</th>
+                                        <th>@sortablelink('nama')</th>
+                                        <th>@sortablelink('deskripsi')</th>
+                                        <th>@sortablelink('tanggal')</th>
                                         <th width="280px">Action</th>
                                     </tr>
-                                    @foreach ($blogs as $blog)
-                                        <tr>
-                                            <td>{{ ++$i }}</td>
-                                            <td><img src="/imgblog/{{ $blog->gambar }}" width="100px"></td>
-                                            <td>{{ $blog->nama }}</td>
-                                            <td>{{ $blog->deskripsi }}</td>
-                                            <td>{{ $blog->tanggal }}</td>
-                                            <td>
-                                                <form action="{{ route('blogs.destroy', $blog->id) }}" method="POST">
+                                    @if($blogs->count())
+                                        @foreach ($blogs as $blog)
+                                            <tr>
+                                                <td>{{ ++$i }}</td>
+                                                <td><img src="/imgblog/{{ $blog->gambar }}" width="100px"></td>
+                                                <td>{{ $blog->nama }}</td>
+                                                <td>{{ $blog->deskripsi }}</td>
+                                                <td>{{ $blog->tanggal }}</td>
+                                                <td>
+                                                    <form action="{{ route('blogs.destroy', $blog->id) }}" method="POST">
 
-                                                    <a class="btn btn-info" target="_blank" href="{{ route('blogs.show', $blog->id) }}">Show</a>
+                                                        <a class="btn btn-info" target="_blank" href="{{ route('blogs.show', $blog->id) }}">Show</a>
 
-                                                    <a class="btn btn-primary" href="{{ route('blogs.edit', $blog->id) }}">Edit</a>
+                                                        <a class="btn btn-primary" href="{{ route('blogs.edit', $blog->id) }}">Edit</a>
 
-                                                    @csrf
-                                                    @method('DELETE')
+                                                        @csrf
+                                                        @method('DELETE')
 
-                                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
+                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    @endif
                                 </table>
 
                                 <div class="d-flex justify-content-center">

@@ -1,10 +1,11 @@
 
 @foreach($comments as $comment)
-<div class="display-comment">
+<div class="display-comment" id="commentview">
     <strong>{{ $comment->user->name }}</strong>
     <p style="margin: 2px;">{{ $comment->comment }}</p>
+    
     <a href="" id="reply"></a>
-    <form method="post" action="{{ route('reply.add') }}">
+    <form id="replyForm">
         @csrf
         <div class="form-group">
             <input type="text" name="comment" class="form-control" />

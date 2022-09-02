@@ -196,6 +196,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Yajra\Datatables\DatatablesServiceProvider::class,
+        Kyslik\ColumnSortable\ColumnSortableServiceProvider::class,
 
 
     ],

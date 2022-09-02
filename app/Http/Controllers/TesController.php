@@ -16,8 +16,8 @@ class TesController extends Controller
         if(request()->ajax()) {
             return datatables()->of(Blog::select('*'))
             ->addIndexColumn()
-            ->addColumn('action', 'action-button')
-            ->addColumn('gambar', 'show-image')
+            ->addColumn('action', 'tespages.action-button')
+            ->addColumn('gambar', 'tespages.show-image')
             ->rawColumns(['action','gambar'])
             ->addIndexColumn()
             ->make(true);

@@ -62,7 +62,7 @@
                             <h3 class="mb-0">Leave A Comment</h3>
                         </div>
                         
-                        <form id="contactForm" action="javascript:void(0)">
+                        <form id="commentForm">
                             <div class="row g-3">
                                 <div class="col-12">
                                     <textarea class="form-control bg-white border-0" rows="5" name="comment" id="comment" placeholder="Comment"></textarea>
@@ -90,6 +90,29 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+
+       /* $('#contactForm').on('submit',function(e) {
+
+            e.preventDefault();
+
+            var formData = new FormData(this);
+
+            $.ajax({
+            type:'POST',
+            url: "{{ url('comments.store')}}",
+            data: formData,
+            cache:false,
+            contentType: false,
+            processData: false,
+            success: (data) => {
+                $("#btn-save").html('Submit');
+                $("#btn-save"). attr("disabled", false);
+            },
+            error: function(data){
+                console.log(data);
+                }
+            });
+        }); 
         
         $('#contactForm').on('submit',function(e){
             e.preventDefault();
@@ -101,7 +124,7 @@
             type:'POST',
             data:{
                 "_token": "{{ csrf_token() }}",
-                comment:comment,
+                comment:comment
             },
             success:function(response){
                 if (response) {
@@ -113,7 +136,56 @@
                 $('#comment-error').text(response.responseJSON.errors.comment);
             }
             });
-        });
+        });*/
+
+        (function($){
+            function processForm( e ){
+                $.ajax({
+                    url: "{{ route('comments.store') }}",
+                    type: 'post',
+                    data: $(this).serialize(),
+                    success: function( data, response ){
+                        $('#success-message').text(response.success); 
+                        $("#commentForm")[0].reset();
+                        window.location.reload();
+                    },
+                    error: function( response ){
+                        $('#comment-error').text(response.responseJSON.errors.comment);
+                    }
+
+                    
+                });
+
+                e.preventDefault();
+            }
+
+            $('#commentForm').submit( processForm );
+        })(jQuery);
+
+        (function($){
+            function processForm( e ){
+                $.ajax({
+                    url: "{{ route('reply.add') }}",
+                    type: 'post',
+                    data: $(this).serialize(),
+                    success: function( data, response ){
+                        $('#success-message').text(response.success); 
+                        $("#replyForm")[0].reset();
+                        window.location.reload();
+                    },
+                    error: function( response ){
+                        $('#comment-error').text(response.responseJSON.errors.comment);
+                    }
+
+                    
+                });
+
+                e.preventDefault();
+            }
+
+            $('#replyForm').submit( processForm );
+        })(jQuery);
+       
 
     </script>
 
