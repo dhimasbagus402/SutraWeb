@@ -5,6 +5,7 @@ use App\Http\Controllers\JamaahController;
 use App\Http\Controllers\MainViewController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BlogShowController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\CommentController;
@@ -55,7 +56,6 @@ Route::get('/blog', 'App\Http\Controllers\BlogShowController@index2');
 Route::post('/comment/store', 'App\Http\Controllers\CommentController@store')->name('comments.store');
 Route::post('/reply/store', 'App\Http\Controllers\CommentController@replyStore')->name('reply.add');
 
-
 //AUTH
 Auth::routes();
 
@@ -96,8 +96,12 @@ All Manager Routes List
 --------------------------------------------
 --------------------------------------------*/
 Route::middleware(['auth', 'user-access:manager'])->group(function () {
-  
-    Route::get('/manager/home', [HomeController::class, 'managerHome'])->name('manager.home');
+    
+    Route::get('/manajerdashboard','App\Http\Controllers\Auth\LoginController@managerHome');
+    Route::get('/manajerdashboard', 'App\Http\Controllers\UserController@index');
+
+    Route::resource('users', UserController::class);
+
 });
 
 Route::resource('blogs', BlogController::class)->only([

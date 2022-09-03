@@ -15,6 +15,7 @@
                         Menu
                     </a>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="navbarlink" href="/users">User</a>    
                         <a class="navbarlink" href="/jamaah">Jamaah</a>
                         <a class="navbarlink" href="/dashboard">Blog</a>
                         <a class="navbarlink" href="/views">Tampilan</a>

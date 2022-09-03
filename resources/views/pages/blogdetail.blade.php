@@ -45,16 +45,6 @@
                         
                     </div>
                     <!-- Comment List End -->
-                    @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <strong>Whoops!</strong> There were some problems with your input.<br><br>
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                    @endif
 
                     <!-- Comment Form Start -->
                     <div class="bg-light rounded p-5">
@@ -63,6 +53,7 @@
                         </div>
                         
                         <form id="commentForm">
+                        @csrf
                             <div class="row g-3">
                                 <div class="col-12">
                                     <textarea class="form-control bg-white border-0" rows="5" name="comment" id="comment" placeholder="Comment"></textarea>
@@ -114,7 +105,7 @@
             });
         }); 
         
-        $('#contactForm').on('submit',function(e){
+        $('#commentForm').on('submit',function(e){
             e.preventDefault();
 
             var comment = $('#comment').val();
@@ -122,11 +113,8 @@
             $.ajax({
             url: "{{ route('comments.store') }}",
             type:'POST',
-            data:{
-                "_token": "{{ csrf_token() }}",
-                comment:comment
-            },
-            success:function(response){
+            data:$(this).serialize(),
+            success:function(data,response){
                 if (response) {
                     $('#success-message').text(response.success); 
                     $("#contactForm")[0].reset(); 
@@ -138,8 +126,9 @@
             });
         });*/
 
+        
         (function($){
-            function processForm( e ){
+            function processComment( e ){
                 $.ajax({
                     url: "{{ route('comments.store') }}",
                     type: 'post',
@@ -159,11 +148,11 @@
                 e.preventDefault();
             }
 
-            $('#commentForm').submit( processForm );
+            $('#commentForm').submit( processComment );
         })(jQuery);
 
         (function($){
-            function processForm( e ){
+            function processReplies( e ){
                 $.ajax({
                     url: "{{ route('reply.add') }}",
                     type: 'post',
@@ -183,8 +172,9 @@
                 e.preventDefault();
             }
 
-            $('#replyForm').submit( processForm );
+            $('#replyForm').submit( processReplies );
         })(jQuery);
+        
        
 
     </script>

@@ -65,6 +65,6 @@ class HomeController extends Controller
      */
     public function managerHome()
     {
-        return view('auth.managerHome');
+        return view('manajerpanel.manajer');
     }
 }

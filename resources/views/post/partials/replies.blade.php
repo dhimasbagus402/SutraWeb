@@ -1,21 +1,11 @@
 
 @foreach($comments as $comment)
-<div class="display-comment" id="commentview">
-    <strong>{{ $comment->user->name }}</strong>
-    <p style="margin: 2px;">{{ $comment->comment }}</p>
-    
-    <a href="" id="reply"></a>
-    <form id="replyForm">
-        @csrf
-        <div class="form-group">
-            <input type="text" name="comment" class="form-control" />
-            <input type="hidden" name="blog_id" value="{{ $blog_id }}" />
-            <input type="hidden" name="comment_id" value="{{ $comment->id }}" />
-        </div>
-        <div class="form-group">
-            <input type="submit" class="btn btn-sm btn-light" style="font-size: 0.8em; margin-bottom: 10px;" value="Reply" />
-        </div>
-    </form>
-    @include('post.partials.replies', ['comments' => $comment->replies])
+<div class="d-flex mb-4" style="margin-top: 40px;">
+    <img class="img-fluid rounded" style="width: 45px; height: 45px;" src="{{asset('/storage/userimg/'. ($comment->user->image ?? 'user.png'))}}" alt="profile_image">
+    <div class="ps-3" id="commentview">
+        <h6 style="color: purple;">{{ $comment->user?->name}}</h6>
+        <p style="margin: 2px;">{{ $comment->comment }}</p>
+
+    </div>
 </div>
 @endforeach 

@@ -8,10 +8,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Casts\Attribute;
+use Kyslik\ColumnSortable\Sortable;
   
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+    use Sortable;
   
     /**
      * The attributes that are mass assignable.
@@ -22,9 +24,12 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'image',
         'password',
         'type'
     ];
+    public $sortable = ['id', 'name', 'email', 'type', 'created_at', 'updated_at'];
+
   
     /**
      * The attributes that should be hidden for serialization.
