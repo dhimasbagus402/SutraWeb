@@ -47,6 +47,8 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
+
+        $remember_me = $request->has('remember_me') ? true : false;
      
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {
@@ -55,11 +57,11 @@ class LoginController extends Controller
             }else if (auth()->user()->type == 'manager') {
                 return redirect()->to('/manajerdashboard');
             }else{
-                return redirect()->to('/home');
+                return redirect()->to('/');
             }
         }else{
             return redirect()->route('login')
-                ->with('error','Email-Address And Password Are Wrong.');
+                ->with('error','Email And Password Are Wrong.');
         }
           
     }

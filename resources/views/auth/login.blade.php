@@ -1,18 +1,19 @@
-@extends('layouts.app')
+@extends('layouts.default4')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card" style="margin-top: 250px; margin-bottom: 100px;">
                 <div class="card-header">{{ __('Login') }}</div>
-
+               
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    
+                    <form id="login_form" method="POST" url="{{ route('login') }}">
                         @csrf
-
+                        
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -45,7 +46,7 @@
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                        {{ __('Ingat Saya') }}
                                     </label>
                                 </div>
                             </div>
@@ -56,18 +57,21 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
+                                @if (Route::has('register'))
+                                    <a class="btn btn-link" style="margin-left: 20px;" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 @endif
                             </div>
                         </div>
+                                @if (Route::has('password.request'))
+                                    <a style="text-align: right;" class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Lupa Password?') }}
+                                    </a>
+                                @endif
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection

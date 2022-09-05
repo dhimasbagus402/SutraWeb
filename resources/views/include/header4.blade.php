@@ -13,23 +13,23 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="/" class="nav-item nav-link">Home</a>
-                    <a href="/about" class="nav-item nav-link">Tentang Kami</a>
-                    <a href="/services" class="nav-item nav-link">Services</a>
-                    <a href="/blog" class="nav-item nav-link">Blog</a>
-                    <a href="/contact" class="nav-item nav-link">Kontak</a>
+                    <a href="/" class="nav-item nav-link" style="color : black;">Home</a>
+                    <a href="/about" class="nav-item nav-link" style="color : black;">Tentang Kami</a>
+                    <a href="/services" class="nav-item nav-link" style="color : black;">Services</a>
+                    <a href="/blog" class="nav-item nav-link" style="color : black;">Blog</a>
+                    <a href="/contact" class="nav-item nav-link" style="color : black;">Kontak</a>
                 </div>
                 <ul class="navbar-nav">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}" style="color : black;">{{ __('Login') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" style="color : black;" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 

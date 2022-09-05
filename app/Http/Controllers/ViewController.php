@@ -58,9 +58,9 @@ class ViewController extends Controller
     // update data
 	public function update(Request $request, Images $image)
     {   
-        $request->validate([
-            'nama' => 'required',
-        ]);
+        //$request->validate([
+            //'nama' => 'required',
+        //]);
 
         $input = $request->all();
 

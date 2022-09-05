@@ -26,7 +26,7 @@
                     <!-- Blog Detail Start -->
 
                     <div class="mb-5">
-                        <img class="img-fluid w-100 rounded mb-5" src="/imgblog/{{ $blog->gambar }}" alt="">
+                        <img class="img-fluid2 w-100 rounded mb-5" src="/imgblog/{{ $blog->gambar }}" alt="">
                         <h1 style="margin-bottom: 0px">{{ $blog->nama }} </h1>
                         <p style="font-size: 14px">{{ $blog->tanggal }}</p>
                         <p style="font-size: 22px">
@@ -38,7 +38,7 @@
                     <!-- Comment List Start -->
                     <div class="mb-5">
                         <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="mb-0">Comments</h3>
+                            <h3 class="mb-0">Comment</h3>
                         </div>
 
                         @include('post.partials.replies', ['comments' => $blog->comments, 'blog_id' => $blog->id])
@@ -49,7 +49,7 @@
                     <!-- Comment Form Start -->
                     <div class="bg-light rounded p-5">
                         <div class="section-title section-title-sm position-relative pb-3 mb-4">
-                            <h3 class="mb-0">Leave A Comment</h3>
+                            <h3 class="mb-0">Kirim Komentar Anda</h3>
                         </div>
                         
                         <form id="commentForm">
@@ -61,7 +61,7 @@
                                     <input type="hidden" name="blog_id" value="{{ $blog->id }}" />
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit" id="submit">Leave Your Comment</button>
+                                    <button class="btn btn-primary w-100 py-3" type="submit" id="submit">Kirim</button>
                                 </div>
                             </div>
                         </form>
@@ -81,50 +81,6 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-
-       /* $('#contactForm').on('submit',function(e) {
-
-            e.preventDefault();
-
-            var formData = new FormData(this);
-
-            $.ajax({
-            type:'POST',
-            url: "{{ url('comments.store')}}",
-            data: formData,
-            cache:false,
-            contentType: false,
-            processData: false,
-            success: (data) => {
-                $("#btn-save").html('Submit');
-                $("#btn-save"). attr("disabled", false);
-            },
-            error: function(data){
-                console.log(data);
-                }
-            });
-        }); 
-        
-        $('#commentForm').on('submit',function(e){
-            e.preventDefault();
-
-            var comment = $('#comment').val();
-
-            $.ajax({
-            url: "{{ route('comments.store') }}",
-            type:'POST',
-            data:$(this).serialize(),
-            success:function(data,response){
-                if (response) {
-                    $('#success-message').text(response.success); 
-                    $("#contactForm")[0].reset(); 
-                }
-            },
-            error: function(response) {
-                $('#comment-error').text(response.responseJSON.errors.comment);
-            }
-            });
-        });*/
 
         
         (function($){
@@ -151,7 +107,8 @@
             $('#commentForm').submit( processComment );
         })(jQuery);
 
-        (function($){
+
+       /* (function($){
             function processReplies( e ){
                 $.ajax({
                     url: "{{ route('reply.add') }}",
@@ -173,7 +130,7 @@
             }
 
             $('#replyForm').submit( processReplies );
-        })(jQuery);
+        })(jQuery); */
         
        
 

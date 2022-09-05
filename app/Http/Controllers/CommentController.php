@@ -50,4 +50,19 @@
    
        }
 
+       /*public function commntdestroy($id)
+        {
+            $user_id = Auth::id(); // 
+            $replys = Comment::where('id', $id)
+            ->where('user_id',$user_id)->first(); // you need to fetch the data
+            //wrap if statement to check data exist or not
+            if(!is_null($reply)){
+                //execute if exist
+                $replys->delete();
+            }
+            return response()->json([
+                'success' => 'Record deleted successfully!'
+            ]);
+        }*/
+
    }

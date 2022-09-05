@@ -51,7 +51,7 @@ class BlogController extends Controller
     public function rrrrrrr(Request $request)
     {
         $validator = Validator::make($request->all(),[
-            'nama' => 'required',
+            'nama' => 'required|max:50',
             'deskripsi' => 'required',
 			'tanggal' => 'required',
         ]);
@@ -78,7 +78,7 @@ class BlogController extends Controller
     {
 
         $request->validate([
-            'nama' => 'required',
+            'nama' => 'required|max:50',
             'deskripsi' => 'required',
 			'tanggal' => 'required',
 			'gambar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
@@ -112,7 +112,7 @@ class BlogController extends Controller
 	public function update(Request $request, Blog $blog)
     {
         $request->validate([
-            'nama' => 'required',
+            'nama' => 'required|max:50',
             'deskripsi' => 'required',
 			'tanggal' => 'required'
         ]);
