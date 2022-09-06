@@ -4,14 +4,14 @@
         
                 <main>
                     <div class="container-fluid px-4" style="margin-top: 30px;">
-                        <h1 class="mt-4">Dashboard</h1>
+                        <h1 class="mt-4">Blog</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <li class="breadcrumb-item active"></li>
                         </ol>
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
-                                DataTable Example
+                                List Blog
                             </div>
                             <br>
                             @if(Session::has('success'))
@@ -25,7 +25,7 @@
                             <div class="card-body">
                                 <div class="pull-right">
                                     <a class="btn btn-success float-end" href="/tambahblog">
-                                        Create Blog
+                                        Tambah Blog
                                     </a> 
                                 </div>
 

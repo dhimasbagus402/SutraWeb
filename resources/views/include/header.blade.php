@@ -30,7 +30,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    <img class="img-fluid3 rounded" style="width: 40px; height: 40px;" src="{{asset('/storage/userimg/'. ( Auth::user()->image ))}}" alt="profile_image">
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

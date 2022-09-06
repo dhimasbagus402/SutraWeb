@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Validator;
   
 class LoginController extends Controller
 {
@@ -61,7 +62,7 @@ class LoginController extends Controller
             }
         }else{
             return redirect()->route('login')
-                ->with('error','Email And Password Are Wrong.');
+                ->with('error','Email atau Password Salah.');
         }
           
     }

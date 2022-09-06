@@ -9,7 +9,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\CommentController;
-use App\Http\Controllers\TesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -107,8 +106,3 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
 Route::resource('blogs', BlogController::class)->only([
     'show'
 ]);
-
-Route::get('blog-list', [TesController::class, 'index']);
-Route::post('edit-blog', [TesController::class, 'edit']);
-Route::post('add-blog', [TesController::class, 'store']);
-Route::post('delete-blog', [TesController::class, 'destroy']);
