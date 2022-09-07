@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('image')->default('user.png');
+            $table->bigInteger('hp')->nullable();
+            $table->date('tanggal_lahir')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->tinyInteger('type')->default(0);

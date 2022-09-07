@@ -5,7 +5,7 @@
         <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img class="banerr" src="/view/{{ $banerabout->gambar }}" alt="Image">
+                    <img style="display: block;margin-left: auto; margin-right: auto;" class="banerr" src="/view/{{ $banerabout->gambar }}" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>

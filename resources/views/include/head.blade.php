@@ -1,9 +1,8 @@
-<head>
+
     <meta charset="utf-8">
     <title>Sutra Tour</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
     <link rel="icon" href="<?php echo asset('img/favicon.ico') ?>">
@@ -26,3 +25,4 @@
 
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+	

@@ -6,11 +6,13 @@
    use App\Models\User;
    use App\Models\Comment;
    use Illuminate\Http\Request;
+   use Auth;
+   use Illuminate\Foundation\Auth\AuthenticatesUsers;
    
    class CommentController extends Controller
    {
-       public function store(Request $request)
-       {
+        public function store(Request $request)
+        {
         
         $request->validate([
             'comment' => 'required|max:255',
@@ -28,8 +30,8 @@
             return response()->json(['success'=>'Your comment is submitted!']);
         }
    
-       public function replyStore(Request $request)
-       {
+        public function replyStore(Request $request)
+        {
 
         $request->validate([
             'comment' => 'required',
@@ -48,21 +50,15 @@
     
             return response()->json(['success'=>'Your comment is submitted!']);
    
-       }
+        }
 
-       /*public function commntdestroy($id)
+        function delete(Comment $comment, $id)
         {
-            $user_id = Auth::id(); // 
-            $replys = Comment::where('id', $id)
-            ->where('user_id',$user_id)->first(); // you need to fetch the data
-            //wrap if statement to check data exist or not
-            if(!is_null($reply)){
-                //execute if exist
-                $replys->delete();
-            }
-            return response()->json([
-                'success' => 'Record deleted successfully!'
-            ]);
-        }*/
+            if (Auth::user() && (Auth::user()->type == 'admin')) {
+                Comment::where('id',$id)->delete();
+                return back();
+            }else
+            return 'you dont have permission';
+        }
 
    }

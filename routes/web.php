@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,12 +19,6 @@ use App\Http\Controllers\CommentController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 */
-
-use App\Http\Controllers\UploadImagesController;
- 
-Route::get('/upload-multiple-image-preview', [UploadImagesController::class, 'index']);
- 
-Route::post('/upload-multiple-image-preview', [UploadImagesController::class, 'store']);
 
 
 
@@ -54,6 +49,7 @@ Route::get('/blog', 'App\Http\Controllers\BlogShowController@index2');
 
 Route::post('/comment/store', 'App\Http\Controllers\CommentController@store')->name('comments.store');
 Route::post('/reply/store', 'App\Http\Controllers\CommentController@replyStore')->name('reply.add');
+Route::delete('/delete/{id}', 'App\Http\Controllers\CommentController@delete')->name('comments.delete');
 
 //AUTH
 Auth::routes();
@@ -63,6 +59,9 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
   
     Route::get('/home', 'App\Http\Controllers\Auth\LoginController@index');
     Route::get('/home', 'App\Http\Controllers\MainViewController@utama');
+    Route::get('/home', 'App\Http\Controllers\ProfileController@index')->name('profile.index');
+    Route::get('/profile/{user}/edit', 'App\Http\Controllers\ProfileController@edit')->name('profile.edit');
+    Route::match(['put', 'patch'],'/profile/{user}', 'App\Http\Controllers\ProfileController@update')->name('profile.update');
 });
   
 /*------------------------------------------
@@ -100,7 +99,6 @@ Route::middleware(['auth', 'user-access:manager'])->group(function () {
     Route::get('/manajerdashboard', 'App\Http\Controllers\UserController@index');
 
     Route::resource('users', UserController::class);
-
 });
 
 Route::resource('blogs', BlogController::class)->only([

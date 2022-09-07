@@ -24,11 +24,13 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'hp',
         'image',
+        'tanggal_lahir',
         'password',
         'type'
     ];
-    public $sortable = ['id', 'name', 'email', 'type', 'created_at', 'updated_at'];
+    public $sortable = ['id', 'name', 'email', 'tanggal_lahir', 'type', 'created_at', 'updated_at'];
 
   
     /**

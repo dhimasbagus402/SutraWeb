@@ -43,11 +43,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Gambar:</strong>
-                            <input 
-                            type="file" 
-                            name="gambar" 
-                            id="inputImage"
-                            multiple 
+                            <input type="file" name="gambar" id="inputImage" 
                             class="form-control @error('gambar') is-invalid @enderror">
                         </div>
                     </div>

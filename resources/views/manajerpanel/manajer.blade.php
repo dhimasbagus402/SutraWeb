@@ -30,10 +30,12 @@
                                     <tr>
                                         <th>No</th>
                                         <th>Gambar</th>
-                                        <th>@sortablelink('name')</th>
-                                        <th>@sortablelink('email')</th>
-                                        <th>@sortablelink('type')</th>
-                                        <th>@sortablelink('created_at')</th>
+                                        <th>@sortablelink('Nama')</th>
+                                        <th>@sortablelink('Emal')</th>
+                                        <th>@sortablelink('Tipe')</th>
+                                        <th>Nomor Hp</th>
+                                        <th>@sortablelink('Tanggal Lahir')</th>
+                                        <th>@sortablelink('Dibuat Tanggal')</th>
                                         <th width="280px">Action</th>
                                     </tr>
                                     @if($users->count())
@@ -44,6 +46,8 @@
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>
                                                 <td>{{ $user->type }}</td>
+                                                <td>{{ $user->hp }}</td>
+                                                <td>{{ $user->tanggal_lahir }}</td>
                                                 <td>{{ $user->created_at->format('d-m-Y') }}</td>
                                                 <td>
                                                     <form action="{{ route('users.destroy', $user->id) }}" method="POST">
