@@ -47,6 +47,7 @@ class LoginController extends Controller
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
+            //'g-recaptcha-response' => 'required|captcha',
         ]);
 
         $remember_me = $request->has('remember_me') ? true : false;

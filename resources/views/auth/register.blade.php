@@ -8,6 +8,12 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
+                {!! NoCaptcha::renderJs() !!}
+  
+                @if ($errors->has('g-recaptcha-response'))
+                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                @endif
+
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
@@ -60,6 +66,8 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+
+                        {!! NoCaptcha::display() !!}
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">

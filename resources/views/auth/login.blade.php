@@ -14,6 +14,12 @@
                         </div>
                     @endif
                     
+                    {!! NoCaptcha::renderJs() !!}
+  
+                    @if ($errors->has('g-recaptcha-response'))
+                        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                    @endif
+                                        
                     <form id="login_form" method="POST" url="{{ route('login') }}">
                         @csrf
                         
@@ -32,6 +38,8 @@
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                             </div>
                         </div>
+
+                        {!! NoCaptcha::display() !!}
 
                         <div class="row mb-3">
                             <div class="col-md-6 offset-md-4">

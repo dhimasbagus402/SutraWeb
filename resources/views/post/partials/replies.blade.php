@@ -2,7 +2,13 @@
 @foreach($comments as $comment)
 
     <div class="d-flex" style="margin-top: 40px; margin-bottom: 7px;">
-        <img class="img-fluid3 rounded" style="width: 48px; height: 48px;" src="{{asset('/storage/userimg/'. ($comment->user->image ?? 'user.png'))}}" alt="profile_image">
+        <?php
+            if(!file_exists('/storage/userimg/'. $comment->user->image))
+                $fileName = $comment->user->image;
+            else
+                $fileName = "user.png";
+        ?>
+        <img class="img-fluid3 rounded" style="width: 48px; height: 48px;" src="{{asset('/storage/userimg/'. $fileName)}}" alt="profile_image">
         <div class="ps-3" id="commentview">
             <h6 style="color: purple;">{{ $comment->user?->name}}</h6>
             <p style="margin: 2px;">{{ $comment->comment }}</p>

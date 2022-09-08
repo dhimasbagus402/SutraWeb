@@ -62,6 +62,7 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
     Route::get('/home', 'App\Http\Controllers\ProfileController@index')->name('profile.index');
     Route::get('/profile/{user}/edit', 'App\Http\Controllers\ProfileController@edit')->name('profile.edit');
     Route::match(['put', 'patch'],'/profile/{user}', 'App\Http\Controllers\ProfileController@update')->name('profile.update');
+    Route::get('/profile/{user}', 'App\Http\Controllers\ProfileController@destroy')->name('profile.delete');
 });
   
 /*------------------------------------------

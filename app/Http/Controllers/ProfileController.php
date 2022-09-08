@@ -55,6 +55,8 @@ class ProfileController extends Controller
 	public function destroy($id)
     {
         $user = User::findOrFail($id);
+        $image_path = public_path('storage/userimg').'/'.$user->image;
+        unlink($image_path);
         $user->delete();
 
 

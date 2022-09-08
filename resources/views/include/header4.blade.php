@@ -29,8 +29,14 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
+                                <?php
+                                if(!file_exists('/storage/userimg/'. ( Auth::user()->image )))
+                                    $fileName = ( Auth::user()->image );
+                                else
+                                    $fileName = "user.png";
+                                ?>
                                 <a id="navbarDropdown" style="color : black;" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <img class="img-fluid3 rounded" style="width: 40px; height: 40px;" src="{{asset('/storage/userimg/'. ( Auth::user()->image ))}}" alt="profile_image">
+                                <img class="img-fluid3 rounded" style="width: 40px; height: 40px;" src="{{asset('/storage/userimg/'. $fileName )}}" alt="profile_image">
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

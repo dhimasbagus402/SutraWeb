@@ -26,3 +26,5 @@
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 	
+    <!-- PopUp -->
+    <link rel="stylesheet" href="{{ asset('css/popup.css') }}">
