@@ -10,18 +10,6 @@
             </form>
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                <li class="nav-item dropdown" style="margin-right: 50px;">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        Menu
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <a class="navbarlink" href="/users">User</a>    
-                        <a class="navbarlink" href="/jamaah">Jamaah</a>
-                        <a class="navbarlink" href="/dashboard">Blog</a>
-                        <a class="navbarlink" href="/views">Tampilan</a>
-                        <a class="navbarlink" href="/" target="_blank">Website</a>
-                    </div>
-                </li>
                 <li class="nav-item dropdown">
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
@@ -33,12 +21,24 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
+                                <?php
+                                if(!file_exists('/storage/userimg/'. ( Auth::user()->image )))
+                                    $fileName = ( Auth::user()->image );
+                                else
+                                    $fileName = "user.png";
+                                ?>
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    <img class="img-fluid3 rounded" style="width: 40px; height: 40px;" src="{{asset('/storage/userimg/'. $fileName)}}" alt="profile_image">
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="navbarlink" href="/users">User</a>    
+                                    <a class="navbarlink" href="/jamaah">Jamaah</a>
+                                    <a class="navbarlink" href="/dashboard">Blog</a>
+                                    <a class="navbarlink" href="/views">Tampilan</a>
+                                    <a class="navbarlink" href="/" target="_blank">Website</a>
+
+                                    <a class="navbarlink" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}

@@ -11715,3 +11715,22 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+.img-account-profile1 {
+  height: 10rem;
+  width: 30rem;
+  display: block;
+  margin-top: 40px;
+}
+
+.img-account-profile2 {
+  display: block;
+  margin-top: 40px;
+}
+
+.uploadgan{
+  margin-bottom: 10px; 
+  width: 150px;
+  display: block;
+  margin-left: 12px;
+}

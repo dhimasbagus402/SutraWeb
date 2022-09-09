@@ -49,14 +49,20 @@
                     <input type="date" id="tanggal" name="tanggal" value="{{$blog->tanggal}}">{{ $blog->tanggal }}
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Gambar:</strong>
-                    <input type="file" name="gambar" value="{{$blog->gambar}}" class="form-control" placeholder="image">
-                    <br>
-                    <img src="/imgblog/{{ $blog->gambar }}" width="100px">
-                </div>
-            </div>
+
+            <?php
+                if(file_exists('imgblog/'. $blog->gambar))
+                    $fileName = $blog->gambar;
+                else
+                    $fileName = "user.png";
+            ?>
+            <img id="category-img-tag" class="img-account-profile2 rounded-circle1 mb-2" src="{{asset('imgblog/'. $fileName)}}" alt="">
+            <div class="small font-italic text-muted mb-4">Jpg atau Png Tidak Lebih dari 2 MB</div>
+                    <!-- Profile picture upload button-->
+                    <input id="file-btn" type="file" class="form-control" name="gambar" hidden/>
+                            
+                    <label class="btn btn-primary uploadgan" for="file-btn">Upload Gambar</label>
+                    
             <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 20px;">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>

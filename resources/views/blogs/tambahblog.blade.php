@@ -40,13 +40,15 @@
                             <input type="date" name="tanggal" class="form-control">
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="form-group">
-                            <strong>Gambar:</strong>
-                            <input type="file" name="gambar" id="inputImage" 
-                            class="form-control @error('gambar') is-invalid @enderror">
-                        </div>
-                    </div>
+
+                    <img id="category-img-tag" class="img-account-profile1 rounded-circle1 mb-2" alt="">
+                    <!-- Profile picture help block-->
+                    <div class="small font-italic text-muted mb-4">Jpg atau Png Tidak Lebih dari 2 MB</div>
+                    <!-- Profile picture upload button-->
+                    <input id="file-btn" type="file" class="form-control" name="gambar" hidden/>
+                            
+                    <label class="btn btn-primary uploadgan" for="file-btn">Upload Gambar</label>
+
                     <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 20px;">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
