@@ -10,7 +10,7 @@
 	 overflow: hidden;
 }
  body {
-	 background-color: #a74006;
+	 background-color: whitesmoke;
 	 font-family: sans-serif;
 }
  .container {
@@ -33,12 +33,12 @@
     font-family: "Comfortaa", cursive;
     font-size: 100px;
     text-align: center;
-    color: #eee;
+    color: black;
     font-weight: 100;
     margin: 0;
 }
  .container p {
-	 color: #fff;
+	 color: black;
 }
  .lock {
 	 transition: 0.5s ease;
@@ -54,7 +54,7 @@
 }
  .lock ::after {
     content: "";
-    background: darken(#f76b1c, 20%);
+    background: darken(#943a05, 20%);
     opacity: 0.3;
     display: block;
     position: absolute;
@@ -64,7 +64,7 @@
     left: 0;
 }
  .lock .bottom {
-	 background: #d68910;
+	 background: black;
 	 height: 40px;
 	 width: 60px;
 	 display: block;
@@ -75,7 +75,7 @@
 	 height: 60px;
 	 width: 50px;
 	 border-radius: 50%;
-	 border: 10px solid #fff;
+	 border: 10px solid orange;
 	 display: block;
 	 position: relative;
 	 top: 30px;
@@ -103,12 +103,12 @@
     font-family: 'Nunito', sans-serif;
     position: relative;
     padding: 35px 0;
-    color: #FFFFFF;
+    color: black;
     font-size: 18px;
     font-weight: 600;
     outline: none;
     transition: .5s;
 }
 .back:hover {
-    color: black;
+    color: orange;
 }

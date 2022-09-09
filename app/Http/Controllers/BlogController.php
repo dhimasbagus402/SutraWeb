@@ -48,32 +48,6 @@ class BlogController extends Controller
     }
 
     // method untuk insert data ke table
-    public function rrrrrrr(Request $request)
-    {
-        $validator = Validator::make($request->all(),[
-            'nama' => 'required|max:50',
-            'deskripsi' => 'required',
-			'tanggal' => 'required',
-        ]);
-
-        if ($gambar = $request->file('gambar')) {
-            $destinationPath = 'imgblog/';
-            $profileImage = date('YmdHis') . "." . $gambar->getClientOriginalExtension();
-            $gambar->move($destinationPath, $profileImage);
-            $input['gambar'] = "$profileImage";
-        }
-        elseif (!$validator->passes()) {
-            return response()->json(['error'=>$validator->errors()->all()]);
-        }
-
-        $input = $request->all();
-        Blog::create($input);    
-
-        return response()->json(['success'=>'Blog created successfully.']);
-
-    }
-
-
     public function store(Request $request)
     {
 

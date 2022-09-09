@@ -49,7 +49,7 @@ Route::get('/blog', 'App\Http\Controllers\BlogShowController@index2');
 
 Route::post('/comment/store', 'App\Http\Controllers\CommentController@store')->name('comments.store');
 Route::post('/reply/store', 'App\Http\Controllers\CommentController@replyStore')->name('reply.add');
-Route::delete('/delete/{id}', 'App\Http\Controllers\CommentController@delete')->name('comments.delete');
+Route::delete('/delete/{id}', 'App\Http\Controllers\CommentController@destroy')->name('comments.delete');
 
 //AUTH
 Auth::routes();
@@ -59,10 +59,10 @@ Route::middleware(['auth', 'user-access:user'])->group(function () {
   
     Route::get('/home', 'App\Http\Controllers\Auth\LoginController@index');
     Route::get('/home', 'App\Http\Controllers\MainViewController@utama');
-    Route::get('/home', 'App\Http\Controllers\ProfileController@index')->name('profile.index');
+    Route::get('/profile/{user}', 'App\Http\Controllers\ProfileController@index')->name('profile.index');
     Route::get('/profile/{user}/edit', 'App\Http\Controllers\ProfileController@edit')->name('profile.edit');
     Route::match(['put', 'patch'],'/profile/{user}', 'App\Http\Controllers\ProfileController@update')->name('profile.update');
-    Route::get('/profile/{user}', 'App\Http\Controllers\ProfileController@destroy')->name('profile.delete');
+    Route::delete('/profile/{user}', 'App\Http\Controllers\ProfileController@destroy')->name('profile.delete');
 });
   
 /*------------------------------------------

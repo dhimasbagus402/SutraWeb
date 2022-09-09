@@ -19,7 +19,7 @@
                         <a class="navbarlink" href="/jamaah">Jamaah</a>
                         <a class="navbarlink" href="/dashboard">Blog</a>
                         <a class="navbarlink" href="/views">Tampilan</a>
-                        <a class="navbarlink" href="/" target="_blank">Home</a>
+                        <a class="navbarlink" href="/" target="_blank">Website</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">

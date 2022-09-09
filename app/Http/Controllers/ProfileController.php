@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
 use Validator;
+use Redirect;
 
 class ProfileController extends Controller
 {
@@ -15,14 +16,14 @@ class ProfileController extends Controller
        $this->middleware('auth');
     }
 
-    public function index()
+    public function index(User $user)
     {
-        return redirect()->to('/');
+        return view('users.profile', compact('user'));
     }
 
     public function edit(User $user)
     {
-        return view('users.profile', compact('user'));
+        return view('users.edit-profile', compact('user'));
     }
 
     // update data
@@ -46,8 +47,8 @@ class ProfileController extends Controller
 
         $user->update($input);
 
-        return redirect()->route('profile.index')
-            ->with('success', 'User updated successfully');
+        return Redirect::back()
+            ->with('success', 'Profile berhasil diperbarui');
     }
 
 
@@ -56,11 +57,56 @@ class ProfileController extends Controller
     {
         $user = User::findOrFail($id);
         $image_path = public_path('storage/userimg').'/'.$user->image;
-        unlink($image_path);
+        
+        if(is_file($image_path)){
+            unlink($image_path);
+        }
         $user->delete();
 
 
-        return redirect()->route('profile.index')
-            ->with('success', 'User deleted successfully');
+        return redirect()->route('login')
+            ->with('success', 'Akun berhasil dihapus');
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

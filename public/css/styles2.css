@@ -11701,12 +11701,13 @@ body {
 .navbarlink:link, .navbarlink:visited {
   color: black;
   padding: 10px 20px;
-  text-align: center;
+  width: 100%;
   text-decoration: none;
   display: inline-block;
 }
 .navbarlink:hover, .navbarlink:active {
-  color: gold;
+  color: #7d5802;
+  background-color: #f0ede6;
 }
 
 .form1{

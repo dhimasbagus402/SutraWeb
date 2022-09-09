@@ -3,8 +3,8 @@
 
     <div class="d-flex" style="margin-top: 40px; margin-bottom: 7px;">
         <?php
-            if(!file_exists('/storage/userimg/'. $comment->user->image))
-                $fileName = $comment->user->image;
+            if(!file_exists('/storage/userimg/'. $comment->user?->image))
+                $fileName = $comment->user?->image;
             else
                 $fileName = "user.png";
         ?>

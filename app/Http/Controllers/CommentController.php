@@ -52,7 +52,7 @@
    
         }
 
-        function delete(Comment $comment, $id)
+        function destroy(Comment $comment, $id)
         {
             if (Auth::user() && (Auth::user()->type == 'admin')) {
                 Comment::where('id',$id)->delete();
