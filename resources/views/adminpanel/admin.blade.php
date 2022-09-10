@@ -24,7 +24,7 @@
                             @endif
                             <div class="card-body">
                                 <div class="pull-right">
-                                    <a class="btn btn-success float-end" href="/tambahblog">
+                                    <a class="btn btn-success float-end" href="/tambahblog" style="margin-left: 20px;">
                                         Tambah Blog
                                     </a> 
                                 </div>

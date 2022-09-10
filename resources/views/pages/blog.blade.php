@@ -32,7 +32,7 @@
                                         <small><i class="far fa-calendar-alt text-primary me-2"></i>{{ $blog->tanggal }}</small>
                                     </div>
                                     <h4 class="mb-3">{{ $blog->nama }}</h4>
-                                    <p>{{ $blog->deskripsi }}</p>
+                                    <div style="height: 60px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><p>{{ $blog->deskripsi }}</p></div>
                                     <a class="text-uppercase" href="{{ route('blogs.show', $blog->id) }}">Baca Blog <i class="bi bi-arrow-right"></i></a>
                                 </div>
                             </div>

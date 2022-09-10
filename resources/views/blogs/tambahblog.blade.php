@@ -25,7 +25,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Nama:</strong>
-                            <input type="text" name="nama" class="form-control" placeholder="Nama">
+                            <input type="text" name="nama" class="form-control" required minlength="4" maxlength="50" placeholder="Nama">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">

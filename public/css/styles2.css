@@ -11717,8 +11717,7 @@ body {
 }
 
 .img-account-profile1 {
-  height: 10rem;
-  width: 30rem;
+  max-width: 500px;
   display: block;
   margin-top: 40px;
 }
@@ -11726,11 +11725,12 @@ body {
 .img-account-profile2 {
   display: block;
   margin-top: 40px;
+  max-width: 500px;
 }
 
 .uploadgan{
   margin-bottom: 10px; 
-  width: 150px;
+  max-width: 150px;
   display: block;
   margin-left: 12px;
 }
