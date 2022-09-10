@@ -2,17 +2,19 @@
 @section('content')
 
     <!--  Banner Start -->
-        <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img style="display: block;margin-left: auto; margin-right: auto;" class="banerr" src="/view/{{ $banerblog->gambar }}" alt="Image">
+                    <img class="w-100" src="/view/{{ $banerblog->gambar }}" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative & Innovative Digital Solution</h1>
                         </div>
                     </div>
                 </div>
-        </div>
+            </div>
+    </div>
     
 
     

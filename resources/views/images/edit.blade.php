@@ -33,9 +33,19 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Gambar:</strong>
-                    <input type="file" name="gambar" value="{{$image->gambar}}" class="form-control" placeholder="image">
+                    <div class="small font-italic text-muted mb-4">Jpg atau Png Tidak Lebih dari 2 MB</div>
+                    <!-- Profile picture upload button-->
+                    <input id="file-btn" type="file" class="form-control" name="gambar" hidden/>
+                            
+                    <label class="btn btn-primary uploadgan" for="file-btn">Upload Gambar</label>
                     <br>
-                    <img src="/view/{{ $image->gambar }}" width="100px">
+                    <?php
+                        if(file_exists('view/'. $image->gambar))
+                            $fileName = $image->gambar;
+                        else
+                            $fileName = "user.png";
+                    ?>
+                    <img id="category-img-tag" class="img-account-profile2 rounded-circle1 mb-2" src="{{asset('view/'. $fileName)}}" alt="">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12" style="margin-top: 20px;">
