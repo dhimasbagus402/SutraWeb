@@ -64,13 +64,22 @@ class ViewController extends Controller
 
         $input = $request->all();
 
-        if ($gambar = $request->file('gambar')) {
+        if($request->hasFile('gambar')){
+
+            // user intends to replace the current image for the category.  
+            // delete existing (if set)
+        
+            if($oldImage = $image->gambar) {
+        
+                unlink(public_path('view/') . $oldImage);
+            
+            }
+
+            $gambar = $request->file('gambar');
             $destinationPath = 'view/';
             $profileImage = date('YmdHis') . "." . $gambar->getClientOriginalExtension();
             $gambar->move($destinationPath, $profileImage);
             $input['gambar'] = "$profileImage";
-        } else {
-            unset($input['gambar']);
         }
 
         $image->update($input);
