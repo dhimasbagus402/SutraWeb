@@ -93,13 +93,23 @@ class BlogController extends Controller
 
         $input = $request->all();
 
-        if ($gambar = $request->file('gambar')) {
+        if($request->hasFile('gambar')){
+
+            // user intends to replace the current image for the category.  
+            // delete existing (if set)
+        
+            if($oldImage = $blog->gambar) {
+        
+                unlink(public_path('imgblog/') . $oldImage);
+            
+            }
+
+            $gambar = $request->file('gambar');
             $destinationPath = 'imgblog/';
             $profileImage = date('YmdHis') . "." . $gambar->getClientOriginalExtension();
             $gambar->move($destinationPath, $profileImage);
             $input['gambar'] = "$profileImage";
-        } else {
-            unset($input['gambar']);
+            
         }
 
         $blog->update($input);
@@ -114,7 +124,9 @@ class BlogController extends Controller
     {
         $blog = Blog::findOrFail($id);
         $image_path = public_path('imgblog').'/'.$blog->gambar;
-        unlink($image_path);
+        if(is_file($image_path)){
+            unlink($image_path);
+        }
         $blog->delete();
 
 

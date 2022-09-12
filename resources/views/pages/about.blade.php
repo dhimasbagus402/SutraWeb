@@ -8,8 +8,8 @@
                     <img class="w-100" src="/view/{{ $banerabout->gambar }}" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>
-                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative & Innovative Digital Solution</h1>
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Sutra Tour</h5>
+                            <h1 class="display-1 text-white mb-md-4 animated zoomIn">Tentang Kami</h1>
                         </div>
                     </div>
                 </div>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
-    <link rel="icon" href="<?php echo asset('img/favicon.ico') ?>">
+    <link rel="icon" href="<?php echo asset('img/icon.png') ?>">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

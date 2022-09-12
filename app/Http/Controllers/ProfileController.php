@@ -36,13 +36,23 @@ class ProfileController extends Controller
 
         $input = $request->all();
 
-        if ($image = $request->file('image')) {
+        if($request->hasFile('image')){
+
+            // user intends to replace the current image for the category.  
+            // delete existing (if set)
+            $oldImage = public_path('storage/userimg').'/'.$user->image;
+            if(is_file($oldImage)) {
+                
+                unlink($oldImage);
+            
+            }
+
+            $image = $request->file('image');
             $destinationPath = 'storage/userimg';
             $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
             $image->move($destinationPath, $profileImage);
             $input['image'] = "$profileImage";
-        } else {
-            unset($input['image']);
+        
         }
 
         $user->update($input);

@@ -9,7 +9,7 @@
                     <img class="w-100" src="/view/{{ $baner1->gambar }}" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Sutra Tour</h5>
                             <h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative & Innovative Digital Solution</h1>
                         </div>
                     </div>
@@ -18,7 +18,7 @@
                     <img class="w-100" src="/view/{{ $baner2->gambar }}" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Creative & Innovative</h5>
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Sutra Tour</h5>
                             <h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative & Innovative Digital Solution</h1>
                     </div>
                 </div>
@@ -336,7 +336,7 @@
                                 <small><i class="far fa-calendar-alt text-primary me-2"></i>{{ $blog->tanggal }}</small>
                             </div>
                             <h4 class="mb-3">{{ $blog->nama }}</h4>
-                            <p>{{ $blog->deskripsi }}</p>
+                            <div style="height: 80px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"><p>{{ $blog->deskripsi }}</p></div>
                             <a class="text-uppercase" href="{{ route('blogs.show', $blog->id) }}">Read More <i class="bi bi-arrow-right"></i></a>
                         </div>
                     </div>
