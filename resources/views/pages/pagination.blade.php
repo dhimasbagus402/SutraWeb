@@ -1,14 +1,13 @@
 @if ($paginator->hasPages())
-    <ul class="pagination">
-       
+    <nav class="pagination-container">
+        <div class="pagination">
         @if ($paginator->onFirstPage())
-            <li class="disabled"><span>Previous</span></li>
+            <a class="disabled ax" href="#">PREV</a>
         @else
-            <li><a href="{{ $paginator->previousPageUrl() }}" rel="prev">Previous</a></li>
+            <a href="{{ $paginator->previousPageUrl() }}" class="pagination-newer ax" rel="prev">PREV</a>
         @endif
 
-
-      
+        <span class="pagination-inner">
         @foreach ($elements as $element)
            
             @if (is_string($element))
@@ -20,9 +19,9 @@
             @if (is_array($element))
                 @foreach ($element as $page => $url)
                     @if ($page == $paginator->currentPage())
-                        <li class="active my-active"><span>{{ $page }}</span></li>
+                        <li class="pagination-active ax"><span>{{ $page }}</span></li>
                     @else
-                        <li><a href="{{ $url }}">{{ $page }}</a></li>
+                        <li><a class="ax" href="{{ $url }}">{{ $page }}</a></li>
                     @endif
                 @endforeach
             @endif
@@ -31,9 +30,9 @@
 
         
         @if ($paginator->hasMorePages())
-            <li><a href="{{ $paginator->nextPageUrl() }}" rel="next">Next</a></li>
+            <a href="{{ $paginator->nextPageUrl() }}" class="pagination-older ax" rel="next">NEXT</a>
         @else
-            <li class="disabled"><span>Next</span></li>
+            <a class="disabled ax" href="#">NEXT</a>
         @endif
     </ul>
 @endif 

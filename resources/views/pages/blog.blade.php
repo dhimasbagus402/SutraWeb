@@ -21,7 +21,7 @@
     <!-- Blog Start -->
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
-            <div class="row g-5">
+            <div class="row g-5 d-flex justify-content-center">
                 <!-- Blog list Start -->
                 @foreach ($blogs as $blog)
                         <div class="col-md-6 wow slideInUp" data-wow-delay="0.1s">
@@ -40,7 +40,9 @@
                             </div>
                         </div>
                 @endforeach
-                {!! $blogs->links('pages.paginator') !!}
+                <div class="d-flex justify-content-center">
+                    {!! $blogs->links('pages.paginator') !!}
+                </div>
             </div>
         </div>
     </div>

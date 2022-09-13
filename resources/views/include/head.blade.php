@@ -30,3 +30,6 @@
 	
     <!-- PopUp -->
     <link rel="stylesheet" href="{{ asset('css/popup.css') }}">
+
+    <!-- PAginator -->
+    <link rel="stylesheet" href="<?php echo asset('css/pagin.min.css') ?>">

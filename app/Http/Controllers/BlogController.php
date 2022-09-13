@@ -19,10 +19,11 @@ class BlogController extends Controller
     public function index()
     {
     	// mengambil data dari table
-    	$blogs = Blog::sortable()->paginate(26);
+        
+        $maxlenght = Blog::count();
+    	$blogs = Blog::sortable()->paginate($maxlenght);
 
-        return view('adminpanel.admin', compact('blogs'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('adminpanel.admin', compact('blogs'));
     }
 
     public function index2()

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JamaahController;
 use App\Http\Controllers\MainViewController;
@@ -46,6 +47,8 @@ Route::get('/about', 'App\Http\Controllers\MainViewController@banerabout');
 Route::get('/contact', 'App\Http\Controllers\MainViewController@banercontact');
 Route::get('/services', 'App\Http\Controllers\MainViewController@banerservices');
 Route::get('/blog', 'App\Http\Controllers\BlogShowController@index2');
+
+Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::post('/comment/store', 'App\Http\Controllers\CommentController@store')->name('comments.store');
 Route::post('/reply/store', 'App\Http\Controllers\CommentController@replyStore')->name('reply.add');

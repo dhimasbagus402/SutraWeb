@@ -19,10 +19,10 @@ class UserController extends Controller
     public function index()
     {
     	// mengambil data dari table
-    	$users = User::sortable()->paginate(26);
+        $maxlenght = User::count();
+    	$users = User::sortable()->paginate($maxlenght);
 
-        return view('manajerpanel.manajer', compact('users'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('manajerpanel.manajer', compact('users'));
     }
 
 
