@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
-use Validator;
-use Redirect;
+use Dotenv\Validator;
+use Illuminate\Support\Facades\Redirect;
 
 class ProfileController extends Controller
 {

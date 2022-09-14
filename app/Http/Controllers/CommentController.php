@@ -6,7 +6,7 @@
    use App\Models\User;
    use App\Models\Comment;
    use Illuminate\Http\Request;
-   use Auth;
+   use Illuminate\Support\Facades\Auth;
    use Illuminate\Foundation\Auth\AuthenticatesUsers;
    
    class CommentController extends Controller

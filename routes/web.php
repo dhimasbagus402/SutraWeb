@@ -11,6 +11,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ViewController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PromoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -84,6 +85,10 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
     Route::resource('images', ViewController::class);
     Route::get('/views', 'App\Http\Controllers\ViewController@index');
     Route::get('/tambah', 'App\Http\Controllers\ViewController@tambah');
+
+    Route::resource('promos', PromoController::class);
+    Route::get('/promos', 'App\Http\Controllers\PromoController@index')->name('promos.index');;
+    Route::get('/tambahpromo', 'App\Http\Controllers\PromoController@tambah');
 
     Route::get('/jamaah','App\Http\Controllers\JamaahController@index');
     Route::get('/jamaahs/{jamaah}/edit','App\Http\Controllers\JamaahController@index');

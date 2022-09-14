@@ -3,10 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
+use Illuminate\Support\Facades\DB;
 use App\Models\Jamaah;
 use App\Models\Images;
 use App\Models\Blog;
+use App\Models\Promo;
 use Illuminate\Support\Facades\View;
 
 class MainViewController extends Controller
@@ -14,7 +15,9 @@ class MainViewController extends Controller
 
         public function utama()
         {
+                $maxlenght = Promo::count();
                 $blogs = Blog::latest()->paginate(3);
+                $promos = Promo::latest()->paginate(4);
                 $umroh = DB::table('jamaahs')->where('nama', 'umroh')->first();
                 $hajj = DB::table('jamaahs')->where('nama', 'hajj')->first();
                 $baner1 = DB::table('images')->where('nama', 'Baner_1')->first();
@@ -22,7 +25,7 @@ class MainViewController extends Controller
                 $aboutus = DB::table('images')->where('nama', 'About_Us')->first();
                 $aboutus2 = DB::table('images')->where('nama', 'About_Us_2')->first();
             
-                return View::make('home', compact('blogs','hajj','umroh','baner1','baner2',
+                return View::make('home', compact('blogs', 'promos', 'hajj','umroh','baner1','baner2',
                                 'aboutus','aboutus2'));
         }
         
@@ -34,8 +37,10 @@ class MainViewController extends Controller
 
         public function banerservices()
         {
+                $maxlenght = Promo::count();
+                $promos = Promo::latest()->paginate($maxlenght);
                 $banerservices = DB::table('images')->where('nama', 'Baner_Services')->first();
-                return View::make('pages.services',compact('banerservices'));
+                return View::make('pages.services',compact('banerservices','promos'));
         }
 
         public function banercontact()
