@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Favicon -->
-<link rel="icon" href="img/icon.png">
+<link rel="icon" href="{{ asset('img/icon.png') }}">
 
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,17 +18,17 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
 <!-- Libraries Stylesheet -->
-<link rel="stylesheet" href="lib/owlcarousel/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="lib/animate/animate.min.css">
+<link rel="stylesheet" href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}" type="text/css">
+<link rel="stylesheet" href="{{ asset('lib/animate/animate.min.css') }}" type="text/css">
 
 <!-- Customized Bootstrap Stylesheet -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css">
 
 <!-- Template Stylesheet -->
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
 
 <!-- PopUp -->
-<link rel="stylesheet" href="css/popup.css">
+<link rel="stylesheet" href="{{ asset('css/popup.css') }}" type="text/css">
 
 <!-- PAginator -->
-<link rel="stylesheet" href="css/pagin.min.css">
+<link rel="stylesheet" href="{{ asset('css/pagin.min.css') }}" type="text/css">
