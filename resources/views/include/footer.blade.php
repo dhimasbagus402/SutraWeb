@@ -34,7 +34,7 @@
                         <div class="link-animated d-flex flex-column justify-content-start">
                             <a class="text-light mb-2" href="/" style="text-decoration: none;"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
                             <a class="text-light mb-2" href="/about" style="text-decoration: none;"><i class="bi bi-arrow-right text-primary me-2"></i>Tentang Kami</a>
-                            <a class="text-light mb-2" href="/services" style="text-decoration: none;"><i class="bi bi-arrow-right text-primary me-2"></i>Our Services</a>
+                            <a class="text-light mb-2" href="/services" style="text-decoration: none;"><i class="bi bi-arrow-right text-primary me-2"></i>Pelayanan Kami</a>
                             <a class="text-light mb-2" href="/blog" style="text-decoration: none;"><i class="bi bi-arrow-right text-primary me-2"></i>Blog Terbaru</a>
                             <a class="text-light" href="/contact" style="text-decoration: none;"><i class="bi bi-arrow-right text-primary me-2"></i>Kontak Kami</a>
                         </div>
