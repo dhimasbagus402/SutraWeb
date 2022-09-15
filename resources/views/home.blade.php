@@ -63,7 +63,7 @@
                 </div>
                 <div class="col-lg-5" style="min-height: 300px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="/view/{{ $aboutus->gambar }}" style="object-fit: cover; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.5s" src="/view/{{ $aboutus->gambar }}" style="object-fit: cover; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
                     </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@
             <div class="row g-5">
                 <div class="col-lg-5" style="min-height: 300px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="/view/{{ $aboutus2->gambar }}" style="object-fit: cover; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.5s" src="/view/{{ $aboutus2->gambar }}" style="object-fit: cover; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
                     </div>
                 </div>
                 <div class="col-lg-7">
@@ -124,7 +124,7 @@
 
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
+                <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.5s">
                     <div style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); height: 300px;" class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center">
                         <div class="service-icon">
                             <img class="icon2" src="{{ asset('img/tour.png') }}">
@@ -134,7 +134,7 @@
 
                     </div>
                 </div>
-                <div class=" text-center position-relative pb-3 mb-5 mx-auto wow zoomIn" data-wow-delay="0.9s" style="max-width: 600px; margin-top: 10px;">
+                <div class=" text-center position-relative pb-3 mb-5 mx-auto wow zoomIn" data-wow-delay="0.5s" style="max-width: 600px; margin-top: 10px;">
                 <a class="text-uppercase" href="/services" style="text-decoration: none; font-size: 20px;">Lihat Lebih Detail <i class="bi bi-arrow-right"></i> </a>
             </div>
             </div>
@@ -152,7 +152,7 @@
             </div>
             <div class="row g-0 justify-content-center">
                 @foreach ($promos as $promo)
-                <div class="col-lg-5 wow zoomIn" data-wow-delay="0.9s" style="min-height: 350px; margin: 15px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
+                <div class="col-lg-5 wow zoomIn" data-wow-delay="0.5s" style="min-height: 350px; margin: 15px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
                     <div class="position-relative h-100 images">
                         <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.1s" src="/promo/{{ $promo->gambar }}" style="object-fit: cover;">
                     </div>
@@ -163,7 +163,7 @@
                     <img class="images-content" id="full-image">
                 </div>
             </div>
-            <div class=" text-center position-relative pb-3 mb-5 mx-auto wow zoomIn" data-wow-delay="0.9s" style="max-width: 600px; margin-top: 10px;">
+            <div class=" text-center position-relative pb-3 mb-5 mx-auto wow zoomIn" data-wow-delay="0.5s" style="max-width: 600px; margin-top: 10px;">
                 <a class="text-uppercase" href="/services" style="text-decoration: none; font-size: 20px;">Promo Lainnya <i class="bi bi-arrow-right"></i> </a>
             </div>
         </div>
