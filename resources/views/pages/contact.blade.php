@@ -9,7 +9,7 @@
                     <img class="w-100" src="/view/{{ $banercontact->gambar }}" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Sutra Tour</h5>
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Sutra Tour Hidayah</h5>
                             <h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative & Innovative Digital Solution</h1>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
             </div>
             <div class="row g-5">
                 <div style="height: 400px;"class="map col-lg-6 wow slideInUp" data-wow-delay="0.6s">
-                    <iframe class="position-relative rounded w-100 h-100"
+                    <iframe class="position-relative rounded w-100 h-100" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d350.10631577972197!2d112.39093516381132!3d-6.890496263591593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e77e82faa873bc9%3A0x28d3d97714968957!2sPT.%20SUTRA%20TOUR%20HIDAYAH%20(PUSAT)!5e0!3m2!1sid!2sid!4v1661753669043!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                     frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
                         tabindex="0"></iframe>

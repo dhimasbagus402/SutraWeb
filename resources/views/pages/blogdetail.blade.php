@@ -13,7 +13,7 @@
             <img class="w-100" src="/view/{{ $banerblog->gambar }}" alt="Image">
             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                 <div class="p-3" style="max-width: 900px;">
-                    <h5 class="text-white text-uppercase mb-3 animated slideInDown">Sutra Tour</h5>
+                    <h5 class="text-white text-uppercase mb-3 animated slideInDown">Sutra Tour Hidayah</h5>
                     <h1 class="display-1 text-white mb-md-4 animated zoomIn">Creative & Innovative Digital Solution</h1>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 <!-- Blog Detail Start -->
 
                 <div class="mb-5 images">
-                    <img class="img-fluid2 w-100 rounded mb-5" src="/imgblog/{{ $blog->gambar }}" alt="">
+                    <img style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);" class="img-fluid2 w-100 rounded mb-5" src="/imgblog/{{ $blog->gambar }}" alt="">
                     <h1 style="margin-bottom: 0px">{{ $blog->nama }} </h1>
                     <p style="font-size: 14px">{{ $blog->tanggal }}</p>
                     <p style="font-size: 22px">

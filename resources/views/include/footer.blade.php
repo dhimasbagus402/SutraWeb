@@ -101,6 +101,13 @@
     $("#image-viewer .close").click(function() {
         $('#image-viewer').hide();
     });
+
+    /* Demo purposes only */
+    $(".hover").mouseleave(
+        function() {
+            $(this).removeClass("hover");
+        }
+    );
 </script>
 
 <!-- Template Javascript -->

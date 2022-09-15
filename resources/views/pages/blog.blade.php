@@ -8,7 +8,7 @@
                     <img class="w-100" src="/view/{{ $banerblog->gambar }}" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Sutra Tour</h5>
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Sutra Tour Hidayah</h5>
                             <h1 class="display-1 text-white mb-md-4 animated zoomIn">Blog</h1>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
                 <!-- Blog list Start -->
                 @foreach ($blogs as $blog)
                         <div class="col-md-6 wow slideInUp" data-wow-delay="0.1s">
-                            <div class="blog-item bg-light rounded overflow-hidden">
+                            <div class="blog-item bg-light rounded overflow-hidden" style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);">
                                 <div class="blog-img position-relative overflow-hidden">
                                     <img class="img-fluid" src="/imgblog/{{ $blog->gambar }}" alt="">
                                 </div>

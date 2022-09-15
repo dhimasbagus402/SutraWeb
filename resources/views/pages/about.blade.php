@@ -8,7 +8,7 @@
                     <img class="w-100" src="/view/{{ $banerabout->gambar }}" alt="Image">
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
-                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Sutra Tour</h5>
+                            <h5 class="text-white text-uppercase mb-3 animated slideInDown">Sutra Tour Hidayah</h5>
                             <h1 class="display-1 text-white mb-md-4 animated zoomIn">Tentang Kami</h1>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                 </div>
                 <div class="col-lg-5" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="img/about.jpg" style="object-fit: cover;">
+                        <img style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);" class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="img/about.jpg" style="object-fit: cover;">
                     </div>
                 </div>
             </div>
