@@ -10,7 +10,7 @@
             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                 <div class="p-3" style="max-width: 900px;">
                     <h5 class="text-white text-uppercase mb-3 animated slideInDown">Sutra Tour HIDAYAH</h5>
-                    <h1 class="display-1 text-white mb-md-4 animated zoomIn">Hajj & Umroh Services</h1>
+                    <h1 class="display-1 text-white mb-md-4 animated zoomIn">Hajj & Umrah Services</h1>
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@
                             <i class="fa fa-check text-primary"></i>
                         </div>
                         <div class="ps-4">
-                            <h5 class="text-white mb-0">Umroh</h5>
+                            <h5 class="text-white mb-0">Umrah</h5>
                             <h1 class="text-white mb-0" data-toggle="counter-up">{{ $umroh?->jumlah }}</h1>
                         </div>
                     </div>
@@ -59,7 +59,8 @@
                             PT. SUTRA TOUR HIDAYAH
                         </h1>
                     </div>
-                    <p class="mb-4">Kami adalah Biro Perjalanan Hajj dan Umroh yang memfokuskan diri sebagai biro perjalanan yang bisa menjadi sahabat perjalanan ibadah anda. Dengan tekad kuat dan tagline “Umroh Hemat, Pasti Berangkat” kami berkomitmen untuk merangkul jamaah dari semua lapisan masyarakat Indonesia.</p>
+                    <p class="mb-4">Kami adalah Biro Perjalanan Hajj dan Umrah yang berdiri sejak tahun 2014, kami memfokuskan diri sebagai biro perjalanan yang bisa menjadi sahabat perjalanan ibadah anda.</p>
+                    <a class="text-uppercase" href="/about" style="text-decoration: none; font-size: 20px;">Lihat Selengkapnya <i class="bi bi-arrow-right"></i> </a>
                 </div>
                 <div class="col-lg-5" style="min-height: 300px;">
                     <div class="position-relative h-100">
@@ -87,7 +88,13 @@
                 </div>
                 <div class="col-lg-7">
                     <h4>Pelayanan Terbaik</h4>
-                    <p class="mb-4">Kami sudah melayani lebih dari 5000 jamaah hajj dan umroh. Kami siap melayani perjalanan hajj dan umroh anda dengan pelayanan yang prima dan amanah.</p>
+                    <p class="mb-4">Kami sudah melayani lebih dari 3.500 jamaah setiap tahunnya. Kami siap melayani perjalanan hajj dan umrah anda dengan pelayanan yang prima dan amanah.</p>
+                    
+                    <h4>Kejujuran & Komitmen</h4>
+                    <p class="mb-4">Kami akan selalu melakukan yang terbaik untuk memberikan apa yang telah kami janjikan. Kami berkomitmen untuk memastikan
+                        bahwa Hajj & Umrah anda selesai dengan cara yang tepat. Ini lebih dari sekedar bisnis untuk kami.
+                    </p>
+                    <a class="text-uppercase" href="/services" style="text-decoration: none; font-size: 20px;">Lihat Selengkapnya <i class="bi bi-arrow-right"></i> </a>
                 </div>
 
             </div>
@@ -105,38 +112,39 @@
             </div>
             <div class="row g-5 justify-content-center">
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                    <div style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); height: 300px;" class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center">
+                    <div style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); height: 300px;" class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                         <div class="service-icon">
-                            <img class="icon2" src="{{ asset('img/tour.png') }}">
+                            <img class="icon2" src="{{ asset('img/kaaba2.png') }}">
                         </div>
-                        <h4 class="mb-3" style="color: whitesmoke;">Hajj Plus</h4>
-                        <p class="m-0"> Bla bla bla Bla bla bla Bla bla bla</p>
+                        <h4 class="mb-3" style="color: #623D79;">Hajj Plus</h4>
+                        <p class="m-0" style="color: #623D79;"> </p>
 
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
-                    <div style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); height: 300px;" class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center">
+                    <div style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); height: 300px;" class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                         <div class="service-icon">
-                            <img class="icon2" src="{{ asset('img/tour.png') }}">
+                            <img class="icon2" src="{{ asset('img/kaaba3.png') }}">
                         </div>
-                        <h4 class="mb-3" style="color: whitesmoke;">Hajj </h4>
-                        <p class="m-0"> Bla bla bla Bla bla bla Bla bla bla</p>
+                        <h4 class="mb-3" style="color: #623D79;">Hajj </h4>
+                        <p class="m-0" style="color: #623D79;"> </p>
 
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.5s">
-                    <div style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); height: 300px;" class="service-item rounded d-flex flex-column align-items-center justify-content-center text-center">
+                    <div style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); height: 300px;" class="service-item bg-light rounded d-flex flex-column align-items-center justify-content-center text-center">
                         <div class="service-icon">
-                            <img class="icon2" src="{{ asset('img/tour.png') }}">
+                            <img class="icon2" src="{{ asset('img/kaaba1.png') }}">
                         </div>
-                        <h4 class="mb-3" style="color: whitesmoke;">Umroh</h4>
-                        <p class="m-0"> Bla bla bla Bla bla bla Bla bla bla Bla bla bla</p>
-
+                        <h4 class="mb-3" style="color: #623D79;">Umrah</h4>
+                        <p class="m-0" style="color: #623D79;"> Surabaya - Jeddah <br>
+                        Surabaya - Madinah<br>
+                        Tersedia paket 9 hari - 16 hari</p>
                     </div>
                 </div>
                 <div class=" text-center position-relative pb-3 mb-5 mx-auto wow zoomIn" data-wow-delay="0.5s" style="max-width: 600px; margin-top: 10px;">
-                <a class="text-uppercase" href="/services" style="text-decoration: none; font-size: 20px;">Lihat Lebih Detail <i class="bi bi-arrow-right"></i> </a>
-            </div>
+                    <a class="text-uppercase" href="/services" style="text-decoration: none; font-size: 20px;">Lihat Selengkapnya <i class="bi bi-arrow-right"></i> </a>
+                </div>
             </div>
         </div>
     </div>
@@ -148,7 +156,7 @@
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
                 <h5 class="fw-bold text-primary text-uppercase">Promo Kami</h5>
-                <h1 class="mb-0"></h1>
+                <h1 class="mb-0"> Penawaran Terbaik</h1>
             </div>
             <div class="row g-0 justify-content-center">
                 @foreach ($promos as $promo)
@@ -198,6 +206,9 @@
                     </div>
                 </div>
                 @endforeach
+                <div class=" text-center position-relative pb-3 mb-5 mx-auto wow zoomIn" data-wow-delay="0.5s" style="max-width: 600px; margin-top: 10px;">
+                    <a class="text-uppercase" href="/services" style="text-decoration: none; font-size: 20px;">Baca Lainnya <i class="bi bi-arrow-right"></i> </a>
+                </div>
             </div>
         </div>
     </div>

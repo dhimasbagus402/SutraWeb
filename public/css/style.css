@@ -317,9 +317,13 @@ h6,
     padding: 0 10px;
     transition: .5s;
     color: whitesmoke;
-    background-color: goldenrod;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    background-color: #623D79;
 }
+
+.service-item:hover  {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
 
 .service-item .service-icon {
     margin-bottom: 30px;
@@ -331,7 +335,7 @@ h6,
     background: whitesmoke;
     border-radius: 2px;
     transform: rotate(-45deg);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
 }
 
@@ -354,9 +358,8 @@ h6,
 }
 
 .service-item  .icon2{
-    width: 60px;
-    height: 60px;
-    margin-left: 5px;
+    width: 70px;
+    height: 70px;
     transform: rotate(45deg);
 }
 
@@ -769,6 +772,7 @@ Image Viewr
     width: 80%;
     max-width: 700px;
 }
+
 .images-content { 
     animation-name: zoom;
     animation-duration: 0.6s;
@@ -832,7 +836,7 @@ List
   background-color: #623D79;
 }
 .snip1404 .plan:hover ,
-.snip1404 .plan.hover  {
+.snip1404 .plan:hover  {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
@@ -880,8 +884,8 @@ List
   text-align: right;
 }
 .snip1404 .plan-price {
-  font-weight: 600;
-  font-size: 3em;
+  font-weight: 500;
+  font-size: 2em;
 }
 .snip1404 .plan-type {
   opacity: 0.8;
@@ -952,4 +956,3 @@ List
     width: 100%;
   }
 }
-
