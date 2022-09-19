@@ -52,7 +52,9 @@
                     </p>
 
                     <h4 class="text-primary">Legalitas & Perijinan Yang Lengkap & Resmi</h4>
-                    <p class="mb-4">Sutra Tour Hidayah merupakan penyelenggara Umrah yang memiliki ijin resmi.
+                    <p class="mb-4">Sutra Tour Hidayah merupakan penyelenggara Umrah yang memiliki ijin resmi.<br>
+                    SK DEPAG NO 617 Tahun 2016 <br>
+                    SK DEPAG NO 127 Tahun 2020
                     </p>
                 </div>
                 <div class="col-lg-6">
@@ -188,6 +190,7 @@
 
 
     <!-- Testimonial Start -->
+    <!--
     <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container py-5">
             <div class="section-title text-center position-relative pb-3 mb-4 mx-auto" style="max-width: 600px;">
@@ -247,6 +250,7 @@
         </div>
     </div>
 </div>
+-->
 <!-- Testimonial End -->
 
 @stop
